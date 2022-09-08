@@ -7,7 +7,6 @@ const NavSearch = ({ onManue, showManue }) => {
       <div className=' m-4  flex justify-between items-center 3xl:w-8/12 lg:w-11/12  lg:mx-auto'>
         <div className=' flex items-center '>
           <img className=' w-[4rem] lg:w-[7rem]' src={brandLogo} alt='' />
-          <h2 className='text-red text-[1.2rem] font-bold'>e-shop</h2>
         </div>
         <div className='w-6/12 relative border-[1px] border-lightGray hover:border-red rounded-full'>
           <span className='lg:inline-block absolute bottom-4 right-6 text-lightGray'>
