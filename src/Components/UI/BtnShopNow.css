@@ -1,0 +1,19 @@
+.slide_line {
+  position: relative;
+}
+.slide_line::before {
+  content: '';
+  border-bottom: 2px solid #e83a59;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s ease-in-out;
+}
+.slide_line:hover::before,
+.slide_line:active::before {
+  transform: scaleX(1);
+}
