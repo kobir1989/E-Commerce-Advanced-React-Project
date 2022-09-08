@@ -9,6 +9,7 @@ import DealsOfTheDay from './Components/LandingPage/Product/DealsOfTheDay';
 import SaleBanner from './Components/LandingPage/Banner/SaleBanner';
 import NewArrival from './Components/LandingPage/Product/NewArrival';
 import ExclusiveBanner from './Components/LandingPage/Banner/ExclusiveBanner';
+import BestSeller from './Components/LandingPage/Product/BestSeller';
 function App() {
   return (
     <>
@@ -24,7 +25,9 @@ function App() {
         <SaleBanner />
         <NewArrival />
         <ExclusiveBanner />
+        <BestSeller />
       </main>
+      <footer></footer>
     </>
   );
 }
