@@ -3,6 +3,7 @@ import './App.css';
 import Hero from './Components/LandingPage/Header/Hero/Hero';
 import NavBar from './Components/LandingPage/Header/NavBar/NavBar';
 import InfoBanner from './Components/LandingPage/Banner/InfoBanner';
+import CategoryBanner from './Components/LandingPage/Banner/CategoryBanner';
 function App() {
   return (
     <>
@@ -12,6 +13,7 @@ function App() {
       </header>
       <main>
         <InfoBanner />
+        <CategoryBanner />
       </main>
     </>
   );
