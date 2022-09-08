@@ -1,6 +1,6 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import './CategoryBanner.css';
+import './Banner.css';
 
 const itemsImg = [
   {

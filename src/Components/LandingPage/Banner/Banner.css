@@ -1,0 +1,30 @@
+.banner:hover img {
+  transform: scale(1.2);
+  transition: all 0.2s linear;
+}
+
+.moving_ani {
+  transition: 0.3s ease-in-out;
+  animation: move 13s linear infinite;
+  overflow: hidden;
+}
+@keyframes move {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.pump_ani {
+  transition: 0.3s linear;
+  animation: pump 1s linear infinite;
+}
+@keyframes pump {
+  0% {
+    color: #e47d58;
+  }
+  100% {
+    color: #9e1a46;
+  }
+}
