@@ -33,12 +33,12 @@ const NavSearch = ({ onManue, showManue }) => {
         )}
 
         <div className=' hidden lg:flex text-gray '>
-          <button className='bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'>
+          <button className='mx-6 bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'>
             <span className='text-[1.2rem]'>
               <Icons name={'User'} />
             </span>
           </button>
-          <button className='relative bg-[#f5f5f5] w-[3rem] mx-6 h-[3rem] rounded-full hover:text-red items-center flex justify-center'>
+          <button className='relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'>
             <span className='px-2 text-white absolute -right-2 -top-4 rounded-full bg-red'>
               0
             </span>
