@@ -5,6 +5,9 @@ import NavBar from './Components/LandingPage/Header/NavBar/NavBar';
 import InfoBanner from './Components/LandingPage/Banner/InfoBanner';
 import CategoryBanner from './Components/LandingPage/Banner/CategoryBanner';
 import BlackFridayBanner from './Components/LandingPage/Banner/BlackFridayBanner';
+import DealsOfTheDay from './Components/LandingPage/Product/DealsOfTheDay';
+import SaleBanner from './Components/LandingPage/Banner/SaleBanner';
+
 function App() {
   return (
     <>
@@ -16,6 +19,8 @@ function App() {
         <InfoBanner />
         <CategoryBanner />
         <BlackFridayBanner />
+        <DealsOfTheDay />
+        <SaleBanner />
       </main>
     </>
   );

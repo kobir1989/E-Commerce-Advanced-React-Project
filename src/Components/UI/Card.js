@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button';
 import Icons from './Icons';
 import Ratings from './Ratings';
+import './Card.css';
 const Card = (props) => {
   return (
     <div className='relative card p-4 bg-white m-8 flex flex-col items-center justify-center hover:shadow-xl  w-[15rem] h-[25rem] rounded'>
