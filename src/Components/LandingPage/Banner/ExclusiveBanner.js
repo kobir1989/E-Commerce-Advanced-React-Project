@@ -6,7 +6,7 @@ import BtnShopNow from '../../UI/BtnShopNow';
 
 const ExclusiveBanner = () => {
   return (
-    <section className='lg:w-8/12 w-full mx-auto mt-20'>
+    <section className='3xl:w-8/12 lg:w-11/12 w-full mx-auto mt-20'>
       <div className='flex lg:flex-row flex-col items-center justify-between uppercase'>
         <div className='w-full lg:w-4/12 h-[12rem] flex items-center  bg-[#F7ECDE]'>
           <div className='w-6/12 ml-6'>

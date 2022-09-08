@@ -20,7 +20,7 @@ const BestSeller = () => {
     getProduct();
   }, []);
   return (
-    <section className='w-8/12 mx-auto  mt-20'>
+    <section className='3xl:w-8/12 lg:W-11/12 w-full mx-auto  mt-20'>
       <div className='text-center mb-8'>
         <h2 className='text-[2.5rem]'>Best Seller</h2>
       </div>

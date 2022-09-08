@@ -3,9 +3,9 @@ import watch from '../../../Assets/watch.png';
 import nikeShoe from '../../../Assets/shoes1.png';
 const SaleBanner = () => {
   return (
-    <section className='lg:w-8/12 w-full mx-auto mt-20'>
+    <section className='3xl:w-8/12 lg:w-11/12 w-full mx-auto mt-20'>
       <div className='flex lg:flex-row flex-col items-center justify-between'>
-        <div className='lg:w-6/12 w-full h-[15rem] bg-black flex justify-evenly items-center'>
+        <div className='lg:w-6/12 w-full h-[15rem] bg-black flex justify-evenly items-center md:mb-20 mb-4 xl:mb-0'>
           <div className='w-4/12'>
             <img className='w-[100%] h-[100%]' src={watch} alt='' />
           </div>

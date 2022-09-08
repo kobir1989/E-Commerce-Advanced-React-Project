@@ -22,7 +22,7 @@ const DealsOfTheDay = () => {
     getProduct();
   }, []);
   return (
-    <section className='mt-20'>
+    <section className='mt-20 3xl:w-8/12 lg:w-11/12 w-full mx-auto'>
       <div className='text-center text-[2.5rem] mb-8'>
         <h2>Deals Of The Day</h2>
       </div>

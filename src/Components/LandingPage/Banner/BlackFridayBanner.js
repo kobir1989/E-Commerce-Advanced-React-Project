@@ -2,7 +2,7 @@ import React from 'react';
 import './Banner.css';
 const BlackFridayBanner = () => {
   return (
-    <section className='lg:border-none border-dashed border-[1px] border-gray mt-20 bg-black lg:w-8/12 w-full flex lg:flex-row flex-col mx-auto items-center justify-between lg:h-[8rem] h-[20rem]'>
+    <section className='lg:border-none border-dashed border-[1px] border-gray mt-20 bg-black 3xl:w-8/12 lg:w-11/12 w-full flex lg:flex-row flex-col mx-auto items-center justify-between lg:h-[8rem] h-[20rem]'>
       <div className='bg-[#B7C4CF] lg:h-full h-[8rem] lg:w-4/12 w-8/12 flex justify-center items-center'>
         <h2 className='lg:text-[2rem] text-[1.5rem] uppercase  pump_ani'>
           black friday sale!
