@@ -10,6 +10,7 @@ import SaleBanner from './Components/LandingPage/Banner/SaleBanner';
 import NewArrival from './Components/LandingPage/Product/NewArrival';
 import ExclusiveBanner from './Components/LandingPage/Banner/ExclusiveBanner';
 import BestSeller from './Components/LandingPage/Product/BestSeller';
+import Footer from './Components/LandingPage/Footer/Footer';
 function App() {
   return (
     <>
@@ -27,7 +28,9 @@ function App() {
         <ExclusiveBanner />
         <BestSeller />
       </main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }
