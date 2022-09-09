@@ -1,6 +1,7 @@
 import React from 'react';
 import Icons from '../../../UI/Icons';
 import brandLogo from '../../../../Assets/ecom-logo.png';
+import { Link } from 'react-router-dom';
 const NavSearch = ({
   onManue,
   showManue,
@@ -59,18 +60,16 @@ const NavSearch = ({
           </button>
           {!showUserLogin && (
             <div className='bg-white shadow-2xl rounded w-[20rem] h-[8rem] flex flex-col items-center absolute right-0 top-12 z-40 text-center'>
-              <a
-                className='my-4 text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'
-                href='#'
-              >
-                Login
-              </a>
-              <a
-                className=' text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'
-                href='#'
-              >
-                Sign up
-              </a>
+              <Link to='login'>
+                <p className='my-4 text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'>
+                  Login
+                </p>
+              </Link>
+              <Link to='signup'>
+                <p className=' text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'>
+                  Sign up
+                </p>
+              </Link>
             </div>
           )}
         </div>

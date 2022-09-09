@@ -18,6 +18,7 @@ import {
   FaTwitter,
   FaInstagram,
   FaYoutube,
+  FaGoogle,
 } from 'react-icons/fa';
 import { GiClothes, GiSonicShoes, GiHealthPotion } from 'react-icons/gi';
 import {
@@ -88,6 +89,8 @@ const Icons = ({ name }) => {
       return <AiOutlineMinus />;
     case 'Plus':
       return <AiOutlinePlus />;
+    case 'Ggl':
+      return <FaGoogle />;
     default:
   }
 };
