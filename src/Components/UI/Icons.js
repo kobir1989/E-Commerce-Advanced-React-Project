@@ -5,7 +5,6 @@ import {
   FaTh,
   FaChevronDown,
   FaSearch,
-  // FaShoppingCart,
   FaRegUser,
   FaBars,
   FaPhoneAlt,
@@ -21,9 +20,15 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 import { GiClothes, GiSonicShoes, GiHealthPotion } from 'react-icons/gi';
-import { AiOutlineLaptop, AiOutlineGift, AiOutlineEye } from 'react-icons/ai';
+import {
+  AiOutlineLaptop,
+  AiOutlineMinus,
+  AiOutlineGift,
+  AiOutlineEye,
+  AiOutlinePlus,
+} from 'react-icons/ai';
 import { MdOutlineShoppingBag } from 'react-icons/md';
-import { ImCross } from 'react-icons/im';
+import { CgClose } from 'react-icons/cg';
 
 const Icons = ({ name }) => {
   switch (name) {
@@ -78,7 +83,11 @@ const Icons = ({ name }) => {
     case 'Ytb':
       return <FaYoutube />;
     case 'Cross':
-      return <ImCross />;
+      return <CgClose />;
+    case 'Minus':
+      return <AiOutlineMinus />;
+    case 'Plus':
+      return <AiOutlinePlus />;
     default:
   }
 };

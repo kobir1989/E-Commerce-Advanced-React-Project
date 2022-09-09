@@ -38,7 +38,7 @@ const CategoryBanner = () => {
           <div className='lg:w-[10rem] w-[14rem] lg:h-[14rem] h-[16rem] relative  mx-2 lg:mx-0 banner'>
             <div>
               <img
-                className='w-full h-[12rem] rounded'
+                className='w-full h-[14rem] rounded'
                 src={item.imgUrl}
                 alt=''
               />

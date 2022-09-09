@@ -3,7 +3,7 @@ import Icons from '../../../UI/Icons';
 import './NavBar.css';
 const NavManue = ({ onCategory, showCategory, showManue }) => {
   return (
-    <section className='lg:flex lg:justify-between lg:items-center lg:w-11/12 3xl:w-8/12 z-20  lg:mx-auto lg:mt-4 py-2 lg:relative text-gray'>
+    <section className='lg:flex lg:justify-between lg:items-center lg:w-11/12 3xl:w-8/12   lg:mx-auto lg:mt-4 py-2 lg:relative text-gray'>
       <div className='hidden lg:flex w-3/12'>
         <div
           className=' bg-[#f5f5f5] p-2 rounded color_anim w-full lg:flex lg:justify-between items-center'
@@ -24,7 +24,7 @@ const NavManue = ({ onCategory, showCategory, showManue }) => {
           </div>
         </div>
         {!showCategory && (
-          <div className='bg-white rounded shadow-xl absolute -top-[-3rem] left-0 text-gray w-[19.8rem] slide_anim '>
+          <div className='bg-white rounded shadow-xl absolute -top-[-3rem] left-0 text-gray w-[19.8rem] slide_anim z-40'>
             <ul className='m-4'>
               <li className='p-4 hover:bg-[#f5f5f5] flex items-center'>
                 <span className='mr-4 text-[1.5rem]'>

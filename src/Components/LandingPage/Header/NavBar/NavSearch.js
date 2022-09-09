@@ -1,7 +1,13 @@
 import React from 'react';
 import Icons from '../../../UI/Icons';
 import brandLogo from '../../../../Assets/ecom-logo.png';
-const NavSearch = ({ onManue, showManue }) => {
+const NavSearch = ({
+  onManue,
+  showManue,
+  onLoginBtn,
+  onShowCart,
+  showUserLogin,
+}) => {
   return (
     <section className='mt-6'>
       <div className=' m-4  flex justify-between items-center 3xl:w-8/12 lg:w-11/12  lg:mx-auto'>
@@ -31,13 +37,19 @@ const NavSearch = ({ onManue, showManue }) => {
           </span>
         )}
 
-        <div className=' hidden lg:flex text-gray '>
-          <button className='mx-6 bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'>
+        <div className=' hidden lg:flex text-gray relative'>
+          <button
+            className='mx-6 bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'
+            onClick={onLoginBtn}
+          >
             <span className='text-[1.2rem]'>
               <Icons name={'User'} />
             </span>
           </button>
-          <button className='relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'>
+          <button
+            className='relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'
+            onClick={onShowCart}
+          >
             <span className='px-2 text-white absolute -right-2 -top-4 rounded-full bg-red'>
               0
             </span>
@@ -45,6 +57,22 @@ const NavSearch = ({ onManue, showManue }) => {
               <Icons name={'Cart'} />
             </span>
           </button>
+          {!showUserLogin && (
+            <div className='bg-white shadow-2xl rounded w-[20rem] h-[8rem] flex flex-col items-center absolute right-0 top-12 z-40 text-center'>
+              <a
+                className='my-4 text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'
+                href='#'
+              >
+                Login
+              </a>
+              <a
+                className=' text-[1.2rem] font-medium hover:text-red hover:bg-lightGray w-full p-1'
+                href='#'
+              >
+                Sign up
+              </a>
+            </div>
+          )}
         </div>
       </div>
       <div className='fixed bottom-0 p-2 z-20 bg-white  w-full lg:hidden '>
@@ -62,18 +90,21 @@ const NavSearch = ({ onManue, showManue }) => {
               </span>
               <a href='#'>Category</a>
             </li>
-            <li className='flex flex-col items-center hover:text-red '>
+            <button className='flex flex-col items-center hover:text-red '>
               <span className='mb-2 text-[1rem] text-gray hover:text-red'>
                 <Icons name={'Cart'} />
               </span>
-              <a href='#'>Cart</a>
-            </li>
-            <li className='flex flex-col items-center hover:text-red '>
+              Cart
+            </button>
+            <button
+              className='flex flex-col items-center hover:text-red '
+              onClick={onLoginBtn}
+            >
               <span className='mb-2 text-[1rem] text-gray hover:text-red'>
                 <Icons name={'User'} />
               </span>
-              <a href='#'>Account</a>
-            </li>
+              Account
+            </button>
           </ul>
         </div>
       </div>

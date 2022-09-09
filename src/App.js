@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Hero from './Components/LandingPage/Header/Hero/Hero';
 import NavBar from './Components/LandingPage/Header/NavBar/NavBar';
@@ -11,11 +11,20 @@ import NewArrival from './Components/LandingPage/Product/NewArrival';
 import ExclusiveBanner from './Components/LandingPage/Banner/ExclusiveBanner';
 import BestSeller from './Components/LandingPage/Product/BestSeller';
 import Footer from './Components/LandingPage/Footer/Footer';
-function App() {
+import Cart from './Components/LandingPage/Cart/Cart';
+const App = () => {
+  const [showCart, setShowCart] = useState(false);
+  const showCartHandler = () => {
+    setShowCart(true);
+  };
+  const closeCartHandler = () => {
+    setShowCart(!showCart);
+  };
   return (
     <>
+      {showCart && <Cart onCloseCart={closeCartHandler} />}
       <header>
-        <NavBar />
+        <NavBar onShowCart={showCartHandler} />
         <Hero />
       </header>
       <main>
@@ -33,6 +42,6 @@ function App() {
       </footer>
     </>
   );
-}
+};
 
 export default App;
