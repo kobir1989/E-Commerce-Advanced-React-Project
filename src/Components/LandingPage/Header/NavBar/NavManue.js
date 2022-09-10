@@ -1,5 +1,6 @@
 import React from 'react';
 import Icons from '../../../UI/Icons';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 const NavManue = ({ onCategory, showCategory, showManue }) => {
   return (
@@ -30,31 +31,31 @@ const NavManue = ({ onCategory, showCategory, showManue }) => {
                 <span className='mr-4 text-[1.5rem]'>
                   <Icons name={'Cloths'} />
                 </span>
-                <a href='#'>Fashion</a>
+                <Link to=''>Fashion</Link>
               </li>
               <li className='p-4 hover:bg-[#f5f5f5] flex items-center'>
                 <span className='mr-4 text-[1.5rem]'>
                   <Icons name={'Laptop'} />
                 </span>
-                <a href='#'>Electronics</a>
+                <Link to=''>Electronics</Link>
               </li>
               <li className='p-4 hover:bg-[#f5f5f5] flex items-center'>
                 <span className='mr-4 text-[1.5rem]'>
                   <Icons name={'Gift'} />
                 </span>
-                <a href='#'>Gifts</a>
+                <Link to=''>Gifts</Link>
               </li>
               <li className='p-4 hover:bg-[#f5f5f5] flex items-center'>
                 <span className='mr-4 text-[1.5rem]'>
                   <Icons name={'Health'} />
                 </span>
-                <a href='#'>Health and Beauty</a>
+                <Link to=''>Health and Beauty</Link>
               </li>
               <li className='p-4 hover:bg-[#f5f5f5] flex items-center'>
                 <span className='mr-4 text-[1.5rem]'>
                   <Icons name={'Shoes'} />
                 </span>
-                <a href='#'>Shoes</a>
+                <Link to=''>Shoes</Link>
               </li>
             </ul>
           </div>
@@ -69,28 +70,28 @@ const NavManue = ({ onCategory, showCategory, showManue }) => {
       >
         <ul className='flex lg:flex-row  flex-col mx-10 lg:mx-0 z-20'>
           <li className='my-4 lg:my-0 mx-3 hover:text-red flex justify-between lg:items-center'>
-            <a href='#'>Home</a>
+            <Link to='/home'>Home</Link>
           </li>
           <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
-            <a href='#'>Mega Menue</a>
+            <Link to=''>Mega Menue</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
           <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
-            <a href='#'>User Account</a>
+            <Link to='/login'>User Account</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
           <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
-            <a href='#'>Vendor Account</a>
+            <Link to=''>Vendor Account</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
           <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
-            <a href='#'>Pages</a>
+            <Link to=''>Pages</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>

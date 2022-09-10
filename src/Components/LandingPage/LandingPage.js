@@ -11,6 +11,7 @@ import ExclusiveBanner from './Banner/ExclusiveBanner';
 import BestSeller from './Product/BestSeller';
 import Footer from './Footer/Footer';
 import Cart from './Cart/Cart';
+import ContextProvider from '../Store/ContextProvider';
 const LandingPage = () => {
   const [showCart, setShowCart] = useState(false);
   const showCartHandler = () => {
@@ -20,7 +21,7 @@ const LandingPage = () => {
     setShowCart(!showCart);
   };
   return (
-    <>
+    <ContextProvider>
       {showCart && <Cart onCloseCart={closeCartHandler} />}
       <header>
         <NavBar onShowCart={showCartHandler} />
@@ -39,7 +40,7 @@ const LandingPage = () => {
       <footer>
         <Footer />
       </footer>
-    </>
+    </ContextProvider>
   );
 };
 

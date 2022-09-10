@@ -13,7 +13,7 @@ const BestSeller = () => {
       img: item.image,
       id: v4(),
     }));
-    console.log(finalData);
+
     setProduct(finalData);
   };
   useEffect(() => {

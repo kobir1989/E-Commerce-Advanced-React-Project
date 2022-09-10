@@ -1,7 +1,5 @@
 import React from 'react';
-import Button from './Button';
 import Icons from './Icons';
-import Ratings from './Ratings';
 import './Card.css';
 const Card = (props) => {
   return (
@@ -18,14 +16,7 @@ const Card = (props) => {
           </span>
         </button>
       </div>
-      <img src={props.img} alt='img' className='w-[50%] h-[45%] mb-4 card' />
-      <h2 className=' mb-2 text-[.9rem]'>{props.title}</h2>
-      <h2 className=' mb-4 text-[1.5rem] text-red '>${props.price}</h2>
-      <div className='mb-4 flex text-red'>
-        <Ratings />
-        <span className='text-[.7rem] text-gray mx-2'>{props.rating}</span>
-      </div>
-      <Button>Add To Cart</Button>
+      <div>{props.children}</div>
     </div>
   );
 };

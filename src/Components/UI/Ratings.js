@@ -3,14 +3,14 @@ import React from 'react';
 const Ratings = (props) => {
   return (
     <div>
-      <ul class='flex justify-center'>
+      <ul className='flex justify-center'>
         <li>
           <svg
             aria-hidden='true'
             focusable='false'
             data-prefix='fas'
             data-icon='star'
-            class='w-4 text-yellow-500 mr-1'
+            className='w-4 text-yellow-500 mr-1'
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 576 512'
@@ -27,7 +27,7 @@ const Ratings = (props) => {
             focusable='false'
             data-prefix='fas'
             data-icon='star'
-            class='w-4 text-yellow-500 mr-1'
+            className='w-4 text-yellow-500 mr-1'
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 576 512'
@@ -44,7 +44,7 @@ const Ratings = (props) => {
             focusable='false'
             data-prefix='fas'
             data-icon='star'
-            class='w-4 text-yellow-500 mr-1'
+            className='w-4 text-yellow-500 mr-1'
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 576 512'
@@ -61,7 +61,7 @@ const Ratings = (props) => {
             focusable='false'
             data-prefix='far'
             data-icon='star'
-            class='w-4 text-yellow-500 mr-1'
+            className='w-4 text-yellow-500 mr-1'
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 576 512'
@@ -78,7 +78,7 @@ const Ratings = (props) => {
             focusable='false'
             data-prefix='far'
             data-icon='star'
-            class='w-4 text-yellow-500'
+            className='w-4 text-yellow-500'
             role='img'
             xmlns='http://www.w3.org/2000/svg'
             viewBox='0 0 576 512'

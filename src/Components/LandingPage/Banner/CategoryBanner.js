@@ -35,7 +35,10 @@ const CategoryBanner = () => {
     <section className='3xl:w-8/12 w-11/12 mt-20 mx-auto bg-white p-4'>
       <div className=' lg:justify-between justify-center items-center flex flex-wrap  '>
         {itemsImg.map((item) => (
-          <div className='lg:w-[10rem] w-[14rem] lg:h-[14rem] h-[16rem] relative  mx-2 lg:mx-0 banner'>
+          <div
+            className='lg:w-[10rem] w-[14rem] lg:h-[14rem] h-[16rem] relative  mx-2 lg:mx-0 banner'
+            key={item.id}
+          >
             <div>
               <img
                 className='w-full h-[14rem] rounded'
