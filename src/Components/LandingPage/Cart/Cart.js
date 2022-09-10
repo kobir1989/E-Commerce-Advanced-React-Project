@@ -67,10 +67,10 @@ const Cart = ({ onCloseCart }) => {
             <div className=''>
               <h3 className='mb-1 font-medium'>{cartItem.title}</h3>
               <span className='text-[.9rem] text-gray'>
-                {cartItem.price} X {cartItem.qntt}
+                ${cartItem.price} X {cartItem.qntt}
               </span>
               <p className='text-red my-2 text-[1.1rem]'>
-                {cartItem.price * cartItem.qntt}
+                ${cartItem.price * cartItem.qntt}
               </p>
             </div>
             <div>
@@ -86,9 +86,9 @@ const Cart = ({ onCloseCart }) => {
             </div>
           </div>
         ))}
-        <div className='absolute w-11/12 mx-auto bottom-6 lg:left-6 left-2'>
+        <div className=' w-11/12 mx-auto mt-8'>
           <button className='bg-red hover:bg-[#EE6983] text-white w-full h-[2.5rem] rounded-xl mb-4'>
-            Checkout Now ({Math.abs(ctx.totalPrice).toFixed(2)})
+            Checkout Now $({Math.abs(ctx.totalPrice).toFixed(2)})
           </button>
           <button className='w-full border-[1px] border-[#FFC4C4] hover:border-red rounded-xl h-[2.5rem]'>
             View Cart
