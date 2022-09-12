@@ -3,7 +3,22 @@ import NavBar from '../LandingPage/Header/NavBar/NavBar';
 import Footer from '../LandingPage/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Icons from '../UI/Icons';
+import useSignUp from './formHook';
 const SingUp = () => {
+  // const {
+  //   value: fullName,
+  //   isValid: hasError,
+  //   inputChangeHandler: fullNameHandler,
+  //   resetInputField,
+  //   inputIsTouched,
+  //   inputBlurHandler: fullNameBlurHandler,
+  // } = useSignUp((value) => value.trim() !== '');
+
+  // const submitHandler = (e) => {
+  //   e.preventDefault();
+  //   resetInputField();
+  // };
+
   return (
     <section>
       <NavBar />
@@ -14,7 +29,10 @@ const SingUp = () => {
             Please fill all the fields to Continue
           </p>
         </div>
-        <form className='flex flex-col mt-20 items-start w-11/12 mx-auto'>
+        <form
+          className='flex flex-col mt-20 items-start w-11/12 mx-auto'
+          // onSubmit={submitHandler}
+        >
           <label
             htmlFor='name'
             className='ml-[.2rem] text-gray text-[.7rem] mb-1'
@@ -22,11 +40,15 @@ const SingUp = () => {
             Full Name
           </label>
           <input
-            name='name'
+            id='name'
             className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
             type='text'
             placeholder='Kabir Hossain'
+            // onChange={fullNameHandler}
+            // value={fullName}
+            // onBlur={fullNameBlurHandler}
           />
+
           <label
             htmlFor='email'
             className='ml-[.2rem] text-gray text-[.7rem] mb-1'
@@ -36,8 +58,10 @@ const SingUp = () => {
           <input
             className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
             type='text'
-            name='email'
+            id='email'
             placeholder='Exmple@email.com'
+            // onChange={onEmail}
+            // value={email}
           />
           <label
             htmlFor='confirm-email'
@@ -48,8 +72,9 @@ const SingUp = () => {
           <input
             className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
             type='text'
-            name='confirm-email'
+            id='confirm-email'
             placeholder='Exmple@email.com'
+            // onChange={emailHandler}
           />
           <label
             htmlFor='password'
@@ -60,8 +85,10 @@ const SingUp = () => {
           <input
             className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
             type='password'
-            name='password'
+            id='password'
             placeholder='******'
+
+            // onChange={passwordHandler}
           />
           <label
             htmlFor='confirm-password'
@@ -74,6 +101,8 @@ const SingUp = () => {
             type='password'
             name='confirm-password'
             placeholder='******'
+            // onChange={onPassword}
+            // value={password}
           />
           <div className='mb-6 '>
             <input className='mr-2' type='checkbox' name='tarms' />

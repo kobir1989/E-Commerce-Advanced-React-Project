@@ -7,6 +7,7 @@ const LogInPage = () => {
   return (
     <section>
       <NavBar />
+
       <section className='mt-20 w-full lg:w-6/12 mx-auto bg-white p-8 rounded-md shadow'>
         <div className='text-center'>
           <h1 className='text-[1.5rem] mb-6'>Welcome to Ecommerce</h1>
