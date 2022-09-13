@@ -4,6 +4,10 @@ import BtnShopNow from '../../UI/BtnShopNow';
 import DealsOfTheDayItems from './DealsOfTheDayItems';
 import { Link } from 'react-router-dom';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import fetchFromAPI from '../../UI/fetchFromAPI';
+>>>>>>> test
 =======
 import fetchFromAPI from '../../UI/fetchFromAPI';
 >>>>>>> test
