@@ -3,14 +3,7 @@ import { v4 } from 'uuid';
 import BtnShopNow from '../../UI/BtnShopNow';
 import DealsOfTheDayItems from './DealsOfTheDayItems';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 import fetchFromAPI from '../../UI/fetchFromAPI';
->>>>>>> test
-=======
-import fetchFromAPI from '../../UI/fetchFromAPI';
->>>>>>> test
 const DealsOfTheDay = () => {
   const [product, setProduct] = useState([]);
   fetchFromAPI('products?limit=4').then((data) => {
