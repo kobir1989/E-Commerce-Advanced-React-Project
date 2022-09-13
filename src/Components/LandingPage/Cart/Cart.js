@@ -28,9 +28,9 @@ const Cart = ({ onCloseCart }) => {
           </button>
         </div>
         <div className='flex items-center w-full justify-start  mb-6   pb-4'>
-          <sapan className='ml-4 text-[2rem] mr-4'>
+          <span className='ml-4 text-[2rem] mr-4'>
             <Icons name={'Cart'} />
-          </sapan>
+          </span>
           <h3 className='text-[1.5rem]'>Your Cart</h3>
         </div>
         {ctx.items.map((cartItem) => (

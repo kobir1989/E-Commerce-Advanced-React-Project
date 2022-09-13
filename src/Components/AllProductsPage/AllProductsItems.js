@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import Card from '../../UI/Card';
-import { Context } from '../../Store/context';
-import Button from '../../UI/Button';
-import Ratings from '../../UI/Ratings';
+import Card from '../UI/Card';
+import { Context } from '../Store/context';
+import Button from '../UI/Button';
+import Ratings from '../UI/Ratings';
 
 const BestSellerItems = (props) => {
   const ctx = useContext(Context);
@@ -18,8 +18,8 @@ const BestSellerItems = (props) => {
   };
 
   return (
-    <div className='flex flex-wrap justify-center items-center'>
-      {props.product.map((item) => (
+    <div className='flex flex-wrap justify-center items-center mt-20'>
+      {props.allProduct.map((item) => (
         <Card key={item.id}>
           <div className='flex flex-col items-center justify-center h-full w-full'>
             <img

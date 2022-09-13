@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import NewArrivalItems from './NewArrivalItems';
 import BtnShopNow from '../../UI/BtnShopNow';
+import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
+import fetchFromAPI from '../../UI/fetchFromAPI';
 const NewArrival = () => {
   const [jwProduct, setJwProduct] = useState([]);
-  const getProduct = async () => {
-    const response = await fetch(
-      'https://fakestoreapi.com/products/category/jewelery'
-    );
-    const data = await response.json();
-    const finalJwData = data.map((item) => ({
+  fetchFromAPI('products?limit=4').then((data) => {
+    const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
       price: item.price,
       img: item.image,
-      retingCount: item.rating,
       id: v4(),
     }));
 
-    setJwProduct(finalJwData);
-  };
+    setJwProduct(finalData);
+  });
+
   useEffect(() => {
-    getProduct();
+    fetchFromAPI();
   }, []);
 
   return (
@@ -30,7 +28,9 @@ const NewArrival = () => {
       </div>
       <NewArrivalItems jwProduct={jwProduct} />
       <div className='flex items-center justify-center'>
-        <BtnShopNow btnName={'Browse More'} />
+        <Link to='/products'>
+          <BtnShopNow btnName={'Browse More'} />
+        </Link>
       </div>
     </section>
   );
