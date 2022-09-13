@@ -4,10 +4,18 @@ import NavBar from '../LandingPage/Header/NavBar/NavBar';
 import fetchFromAPI from '../UI/fetchFromAPI';
 import AllCategoryBtn from './AllCategoryBtn';
 import AllProductsItems from './AllProductsItems';
+import Cart from '../LandingPage/Cart/Cart';
 import { v4 } from 'uuid';
 const Allproducts = () => {
+  const [showCart, setShowCart] = useState(false);
+  const showCartHandler = () => {
+    setShowCart(true);
+  };
+  const closeCartHandler = () => {
+    setShowCart(!showCart);
+  };
   const [allProduct, setAllProduct] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('products');
+  const [selectedCategory, setSelectedCategory] = useState('');
   console.log(selectedCategory);
   useEffect(() => {
     let isMounted = true;
@@ -31,7 +39,8 @@ const Allproducts = () => {
 
   return (
     <section>
-      <NavBar />
+      <NavBar onShowCart={showCartHandler} />
+      {showCart && <Cart onCloseCart={closeCartHandler} />}
       <section className='3xl:w-8/12 lg:W-11/12 w-full mx-auto  mt-20'>
         <AllCategoryBtn
           selectedCategory={selectedCategory}

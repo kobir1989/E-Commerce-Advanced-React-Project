@@ -6,7 +6,7 @@ import { v4 } from 'uuid';
 import fetchFromAPI from '../../UI/fetchFromAPI';
 const NewArrival = () => {
   const [jwProduct, setJwProduct] = useState([]);
-  fetchFromAPI('products?limit=4').then((data) => {
+  fetchFromAPI('?limit=4').then((data) => {
     const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
       price: item.price,

@@ -6,41 +6,41 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
     <div className='mt-20 flex flex-wrap lg:justify-between justify-center items-center'>
       <button
         className={
-          selectedCategory === 'products'
+          selectedCategory === ''
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products')}
+        onClick={() => setSelectedCategory('')}
       >
         All Products
       </button>
       <button
         className={
-          selectedCategory === 'products'
+          selectedCategory === ''
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products')}
+        onClick={() => setSelectedCategory('')}
       >
         Fashion
       </button>
       <button
         className={
-          selectedCategory === 'products'
+          selectedCategory === ''
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products')}
+        onClick={() => setSelectedCategory('')}
       >
         Men
       </button>
       <button
         className={
-          selectedCategory === 'products'
+          selectedCategory === ''
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products')}
+        onClick={() => setSelectedCategory('')}
       >
         Women
       </button>
@@ -50,17 +50,17 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products/category/jewelery')}
+        onClick={() => setSelectedCategory('category/jewelery')}
       >
         Jewelery
       </button>
       <button
         className={
-          selectedCategory === 'products/category/electronics'
+          selectedCategory === 'category/electronics'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('products/category/electronics')}
+        onClick={() => setSelectedCategory('category/electronics')}
       >
         Electronics
       </button>

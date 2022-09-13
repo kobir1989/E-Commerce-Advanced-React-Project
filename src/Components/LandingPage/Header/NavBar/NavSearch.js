@@ -83,24 +83,29 @@ const NavSearch = ({
         <div>
           <ul className='flex  justify-evenly items-center text-[.8rem]'>
             <li className='flex flex-col items-center hover:text-red '>
-              <span className='mb-2 text-[1rem] text-gray hover:text-red'>
-                <Icons name={'Home'} />
-              </span>
               <Link to='/home'>
-                <p>Home</p>
+                <span className='mb-2 text-[1rem] text-gray hover:text-red'>
+                  <Icons name={'Home'} />
+                </span>
+
+                <span>Home</span>
               </Link>
             </li>
             <li className='flex flex-col items-center hover:text-red '>
-              <span className='mb-2 text-[1rem] text-gray'>
-                <Icons name={'Category'} />
-              </span>
-              <Link to=''>Category</Link>
+              <Link to='/products'>
+                <span className='mb-2 text-[1rem] text-gray'>
+                  <Icons name={'Category'} />
+                </span>
+                <span> Category</span>
+              </Link>
             </li>
             <button className='flex flex-col items-center hover:text-red '>
-              <span className='mb-2 text-[1rem] text-gray'>
-                <Icons name={'Cart'} />
-              </span>
-              Cart
+              <Link to='/shopingcart'>
+                <span className='mb-2 text-[1rem] text-gray'>
+                  <Icons name={'Cart'} />
+                </span>
+                <span> Cart</span>
+              </Link>
             </button>
             <button
               className='flex flex-col items-center hover:text-red '
@@ -110,7 +115,7 @@ const NavSearch = ({
                 <span className='mb-2 text-[1rem] text-gray'>
                   <Icons name={'User'} />
                 </span>
-                Account
+                <span> Account</span>
               </Link>
             </button>
           </ul>
