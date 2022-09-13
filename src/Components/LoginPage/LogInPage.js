@@ -3,7 +3,43 @@ import NavBar from '../LandingPage/Header/NavBar/NavBar';
 import Footer from '../LandingPage/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Icons from '../UI/Icons';
+import useSignUp from '../SignUp/formHook';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const LogInPage = () => {
+  const {
+    value: email,
+    isValid: emailInputIsValid,
+    hasError: emailInputInvalid,
+    inputChangeHandler: emailHandler,
+    resetInputField: resetEmail,
+    inputBlurHandler: emailBlurHandler,
+  } = useSignUp((value) => value.includes('@'));
+
+  const {
+    value: password,
+    isValid: passwordIsValid,
+    hasError: passwordInvalid,
+    inputChangeHandler: passwordHandler,
+    resetInputField: resetPassword,
+    inputBlurHandler: passwordBlurHandler,
+  } = useSignUp((value) => value.length >= 6);
+
+  let formIsValid = false;
+  if (emailInputIsValid && passwordIsValid) {
+    formIsValid = true;
+  }
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+    if (!formIsValid) {
+      return toast.error('Please Login With your user name & password');
+    }
+
+    resetEmail();
+    resetPassword();
+    toast.success('Welcom Back');
+  };
   return (
     <section>
       <NavBar />
@@ -15,23 +51,50 @@ const LogInPage = () => {
             Please Log in with your email and password if you have an account
           </p>
         </div>
-        <form className='flex flex-col mt-20 items-start w-11/12 mx-auto'>
+        <form
+          className='flex flex-col mt-20 items-start w-11/12 mx-auto'
+          onSubmit={loginHandler}
+        >
           <label className='ml-[.2rem] text-gray text-[.7rem] mb-1'>
             Email or Phone Number
           </label>
           <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
-            type='text'
+            className={
+              emailInputInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
+            type='email'
             placeholder='Exmple@email.com'
+            value={email}
+            onBlur={emailBlurHandler}
+            onChange={emailHandler}
           />
+          {emailInputInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Please Write your User Name or Email
+            </p>
+          )}
           <label className='ml-[.2rem] text-gray text-[.7rem] mb-1'>
             Password
           </label>
           <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
+            className={
+              passwordInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
             type='password'
             placeholder='******'
+            value={password}
+            onChange={passwordHandler}
+            onBlur={passwordBlurHandler}
           />
+          {passwordInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Please Write your Password
+            </p>
+          )}
           <button className='w-full bg-red h-[2.5rem] rounded-md text-white'>
             Login
           </button>
@@ -69,6 +132,17 @@ const LogInPage = () => {
         </div>
       </section>
       <Footer />
+      <ToastContainer
+        position='top-right'
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };

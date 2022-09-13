@@ -63,7 +63,7 @@ const SingUp = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (!formIsValid) {
-      return;
+      return toast.error(' Please fill all the fields to Continue');
     }
     console.log(fullName);
     toast.success('Account Created');
