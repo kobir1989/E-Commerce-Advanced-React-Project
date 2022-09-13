@@ -4,20 +4,74 @@ import Footer from '../LandingPage/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Icons from '../UI/Icons';
 import useSignUp from './formHook';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const SingUp = () => {
-  // const {
-  //   value: fullName,
-  //   isValid: hasError,
-  //   inputChangeHandler: fullNameHandler,
-  //   resetInputField,
-  //   inputIsTouched,
-  //   inputBlurHandler: fullNameBlurHandler,
-  // } = useSignUp((value) => value.trim() !== '');
+  // Full Name Validation Check
 
-  // const submitHandler = (e) => {
-  //   e.preventDefault();
-  //   resetInputField();
-  // };
+  const {
+    value: fullName,
+    isValid: nameInputIsValid,
+    hasError: nameInputInvalid,
+    inputChangeHandler: fullNameHandler,
+    resetInputField: resetName,
+    inputBlurHandler: fullNameBlurHandler,
+  } = useSignUp((value) => value.trim() && value.length > 5);
+
+  // Email Validation Check
+
+  const {
+    value: email,
+    isValid: emailInputIsValid,
+    hasError: emailInputInvalid,
+    inputChangeHandler: emailHandler,
+    resetInputField: resetEmail,
+    inputBlurHandler: emailBlurHandler,
+  } = useSignUp((value) => value.includes('@'));
+
+  // password validation check
+
+  const {
+    value: password,
+    isValid: passwordIsValid,
+    hasError: passwordInvalid,
+    inputChangeHandler: passwordHandler,
+    resetInputField: resetPassword,
+    inputBlurHandler: passwordBlurHandler,
+  } = useSignUp((value) => value.length >= 6);
+
+  // confirm-password validation check
+
+  const {
+    value: confirmPassword,
+    isValid: confirmPasswordIsValid,
+    hasError: confirmPasswordInvalid,
+    inputChangeHandler: confirmPasswordHandler,
+    resetInputField: resetConfirmPassword,
+    inputBlurHandler: confirmPasswordBlurHandler,
+  } = useSignUp((value) => value === password);
+
+  let formIsValid = false;
+  if (
+    nameInputIsValid &&
+    emailInputIsValid &&
+    passwordIsValid &&
+    confirmPasswordIsValid
+  ) {
+    formIsValid = true;
+  }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    if (!formIsValid) {
+      return;
+    }
+    console.log(fullName);
+    toast.success('Account Created');
+    resetName();
+    resetEmail();
+    resetPassword();
+    resetConfirmPassword();
+  };
 
   return (
     <section>
@@ -31,24 +85,31 @@ const SingUp = () => {
         </div>
         <form
           className='flex flex-col mt-20 items-start w-11/12 mx-auto'
-          // onSubmit={submitHandler}
+          onSubmit={submitHandler}
         >
           <label
             htmlFor='name'
-            className='ml-[.2rem] text-gray text-[.7rem] mb-1'
+            className='text-gray ml-[.2rem] text-[.7rem] mb-1'
           >
             Full Name
           </label>
           <input
             id='name'
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
-            type='text'
+            className={
+              nameInputInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
             placeholder='Kabir Hossain'
-            // onChange={fullNameHandler}
-            // value={fullName}
-            // onBlur={fullNameBlurHandler}
+            onChange={fullNameHandler}
+            value={fullName}
+            onBlur={fullNameBlurHandler}
           />
-
+          {nameInputInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Please Write your Full Name
+            </p>
+          )}
           <label
             htmlFor='email'
             className='ml-[.2rem] text-gray text-[.7rem] mb-1'
@@ -56,26 +117,24 @@ const SingUp = () => {
             Email or Phone Number
           </label>
           <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
-            type='text'
+            className={
+              emailInputInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
+            type='email'
             id='email'
             placeholder='Exmple@email.com'
-            // onChange={onEmail}
-            // value={email}
+            onChange={emailHandler}
+            onBlur={emailBlurHandler}
+            value={email}
           />
-          <label
-            htmlFor='confirm-email'
-            className='ml-[.2rem] text-gray text-[.7rem] mb-1'
-          >
-            Confirm Email or Phone Number
-          </label>
-          <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
-            type='text'
-            id='confirm-email'
-            placeholder='Exmple@email.com'
-            // onChange={emailHandler}
-          />
+          {emailInputInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Please Submit Valid Email
+            </p>
+          )}
+
           <label
             htmlFor='password'
             className='ml-[.2rem] text-gray text-[.7rem] mb-1'
@@ -83,13 +142,23 @@ const SingUp = () => {
             Password
           </label>
           <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
+            className={
+              passwordInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
             type='password'
             id='password'
             placeholder='******'
-
-            // onChange={passwordHandler}
+            onChange={passwordHandler}
+            value={password}
+            onBlur={passwordBlurHandler}
           />
+          {passwordInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Password should be minimum 6 characters
+            </p>
+          )}
           <label
             htmlFor='confirm-password'
             className='ml-[.2rem] text-gray text-[.7rem] mb-1'
@@ -97,13 +166,24 @@ const SingUp = () => {
             Retype Password
           </label>
           <input
-            className='w-full h-[3rem] mb-6 pl-4 rounded-md border-[.5px] border-lightGray'
+            className={
+              confirmPasswordInvalid
+                ? 'outline-red w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md  border-[1px] border-red'
+                : 'outline-[#83BD75] w-full h-[3rem] mb-6 pl-4 rounded-md w-full h-[3rem] mb-6 pl-4 rounded-md border-[1px] border-lightGray'
+            }
+            id='password-confirm'
             type='password'
             name='confirm-password'
             placeholder='******'
-            // onChange={onPassword}
-            // value={password}
+            onChange={confirmPasswordHandler}
+            value={confirmPassword}
+            onBlur={confirmPasswordBlurHandler}
           />
+          {confirmPasswordInvalid && (
+            <p className='text-[.8rem] text-red mt-[-1rem]'>
+              Those passwords didn’t match. Try again.
+            </p>
+          )}
           <div className='mb-6 '>
             <input className='mr-2' type='checkbox' name='tarms' />
             <label
@@ -150,6 +230,17 @@ const SingUp = () => {
         </div>
       </section>
       <Footer />
+      <ToastContainer
+        position='top-right'
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </section>
   );
 };

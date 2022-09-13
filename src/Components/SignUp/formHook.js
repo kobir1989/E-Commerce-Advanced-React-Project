@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 const useSignUp = (value) => {
   const [inputValue, setInputValue] = useState('');
-  const [inputIsTouched, setInputIsTouched] = useState(true);
+  const [inputIsTouched, setInputIsTouched] = useState(false);
   const valueIsValid = value(inputValue);
   const hasError = !valueIsValid && inputIsTouched;
   const inputChangeHandler = (e) => {
@@ -11,17 +11,18 @@ const useSignUp = (value) => {
     console.log(e.target.value);
   };
   const inputBlurHandler = () => {
-    setInputIsTouched(false);
+    setInputIsTouched(true);
   };
   const resetInputField = () => {
     setInputValue('');
+    setInputIsTouched(false);
   };
   return {
     value: inputValue,
-    isValid: hasError,
+    isValid: valueIsValid,
+    hasError,
     inputChangeHandler,
     resetInputField,
-    inputIsTouched,
     inputBlurHandler,
   };
 };
