@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import BtnShopNow from '../../UI/BtnShopNow';
 import DealsOfTheDayItems from './DealsOfTheDayItems';
+import { Link } from 'react-router-dom';
 const DealsOfTheDay = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
@@ -28,7 +29,9 @@ const DealsOfTheDay = () => {
       </div>
       <DealsOfTheDayItems product={product} />
       <div className='flex items-center justify-center'>
-        <BtnShopNow btnName={'Browse More'} />
+        <Link to='/products'>
+          <BtnShopNow btnName={'Browse More'} />
+        </Link>
       </div>
     </section>
   );

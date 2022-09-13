@@ -117,7 +117,7 @@ const LogInPage = () => {
         <div className='flex flex-col items-center mt-4'>
           <p className='text-gray mb-6 text-[.8rem]'>
             Don't have and account?
-            <Link to='signup'>
+            <Link to='/signup'>
               <span className='border-b border-lightGray pb-1 hover:text-red  mx-2'>
                 Sign Up
               </span>

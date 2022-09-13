@@ -215,7 +215,7 @@ const SingUp = () => {
         <div className='flex flex-col items-center mt-4'>
           <p className='text-gray mb-6 text-[.8rem]'>
             Already a member?
-            <Link to='login'>
+            <Link to='/login'>
               <span className='border-b border-lightGray pb-1 hover:text-red  mx-2'>
                 Login
               </span>

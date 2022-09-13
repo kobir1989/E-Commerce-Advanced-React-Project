@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import BestSellerItems from './BestSellerItems';
 import BtnShopNow from '../../UI/BtnShopNow';
+import { Link } from 'react-router-dom';
 const BestSeller = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
@@ -26,7 +27,9 @@ const BestSeller = () => {
       </div>
       <BestSellerItems product={product} />
       <div className='flex items-center justify-center'>
-        <BtnShopNow btnName={'Browse More'} />
+        <Link to='/products'>
+          <BtnShopNow btnName={'Browse More'} />
+        </Link>
       </div>
     </section>
   );

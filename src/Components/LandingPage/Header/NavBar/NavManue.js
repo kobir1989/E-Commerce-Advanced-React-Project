@@ -91,7 +91,7 @@ const NavManue = ({ onCategory, showCategory, showManue }) => {
             </span>
           </li>
           <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
-            <Link to=''>Pages</Link>
+            <Link to='/products'>Pages</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>

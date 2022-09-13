@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import NewArrivalItems from './NewArrivalItems';
 import BtnShopNow from '../../UI/BtnShopNow';
+import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
 const NewArrival = () => {
   const [jwProduct, setJwProduct] = useState([]);
@@ -30,7 +31,9 @@ const NewArrival = () => {
       </div>
       <NewArrivalItems jwProduct={jwProduct} />
       <div className='flex items-center justify-center'>
-        <BtnShopNow btnName={'Browse More'} />
+        <Link to='/products'>
+          <BtnShopNow btnName={'Browse More'} />
+        </Link>
       </div>
     </section>
   );
