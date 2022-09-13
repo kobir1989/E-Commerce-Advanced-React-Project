@@ -3,24 +3,25 @@ import { v4 } from 'uuid';
 import BtnShopNow from '../../UI/BtnShopNow';
 import DealsOfTheDayItems from './DealsOfTheDayItems';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import fetchFromAPI from '../../UI/fetchFromAPI';
+>>>>>>> test
 const DealsOfTheDay = () => {
   const [product, setProduct] = useState([]);
-  const getProduct = async () => {
-    const response = await fetch('https://fakestoreapi.com/products?limit=4');
-    const data = await response.json();
-
+  fetchFromAPI('products?limit=4').then((data) => {
     const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
-      id: v4(),
       price: item.price,
       img: item.image,
-      rating: item.rating.rate,
-      ratingCount: item.rating.count,
+      id: v4(),
     }));
+
     setProduct(finalData);
-  };
+  });
+
   useEffect(() => {
-    getProduct();
+    fetchFromAPI();
   }, []);
   return (
     <section className='mt-20 3xl:w-8/12 lg:w-11/12 w-full mx-auto'>

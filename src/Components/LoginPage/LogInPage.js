@@ -102,15 +102,15 @@ const LogInPage = () => {
         <div className='flex flex-col items-center mt-10 w-11/12 mx-auto'>
           <span className='mb-2'>or</span>
           <button className='text-[.9rem] w-full bg-[#277BC0] h-[2.5rem] rounded-md text-white  mb-4 flex items-center justify-center'>
-            <sapan className='mr-4'>
+            <span className='mr-4'>
               <Icons name={'Fb'} />
-            </sapan>
+            </span>
             Continue With Facebook
           </button>
           <button className='text-[.9rem] w-full bg-[#3AB4F2] h-[2.5rem] rounded-md text-white mb-4 flex items-center justify-center'>
-            <sapan className='mr-4'>
+            <span className='mr-4'>
               <Icons name={'Ggl'} />
-            </sapan>
+            </span>
             Continue with Google
           </button>
         </div>
