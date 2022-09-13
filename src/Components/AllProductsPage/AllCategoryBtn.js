@@ -46,21 +46,21 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
       </button>
       <button
         className={
-          selectedCategory === 'products/category/jewelery'
+          selectedCategory === '/category/jewelery'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('category/jewelery')}
+        onClick={() => setSelectedCategory('/category/jewelery')}
       >
         Jewelery
       </button>
       <button
         className={
-          selectedCategory === 'category/electronics'
+          selectedCategory === '/category/electronics'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('category/electronics')}
+        onClick={() => setSelectedCategory('/category/electronics')}
       >
         Electronics
       </button>

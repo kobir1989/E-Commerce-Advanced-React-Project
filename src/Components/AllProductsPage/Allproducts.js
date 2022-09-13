@@ -15,7 +15,7 @@ const Allproducts = () => {
     setShowCart(!showCart);
   };
   const [allProduct, setAllProduct] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('/');
   console.log(selectedCategory);
   useEffect(() => {
     let isMounted = true;
