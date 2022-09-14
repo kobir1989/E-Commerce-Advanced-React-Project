@@ -11,6 +11,7 @@ import ExclusiveBanner from './Banner/ExclusiveBanner';
 import BestSeller from './Product/BestSeller';
 import Footer from './Footer/Footer';
 import Cart from './Cart/Cart';
+
 const LandingPage = () => {
   const [showCart, setShowCart] = useState(false);
   const showCartHandler = () => {

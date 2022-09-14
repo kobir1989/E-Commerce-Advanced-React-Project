@@ -3,22 +3,23 @@ import NewArrivalItems from './NewArrivalItems';
 import BtnShopNow from '../../UI/BtnShopNow';
 import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
-import fetchFromAPI from '../../UI/fetchFromAPI';
+
 const NewArrival = () => {
   const [jwProduct, setJwProduct] = useState([]);
-  fetchFromAPI('?limit=4').then((data) => {
+  const getProduct = async () => {
+    const response = await fetch('https://fakestoreapi.com/products?limit=8');
+    const data = await response.json();
     const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
       price: item.price,
       img: item.image,
       id: v4(),
     }));
-
+    console.log(finalData);
     setJwProduct(finalData);
-  });
-
+  };
   useEffect(() => {
-    fetchFromAPI();
+    getProduct();
   }, []);
 
   return (
