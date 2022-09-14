@@ -6,6 +6,8 @@ import LandingPage from './Components/LandingPage/LandingPage';
 import LogInPage from './Components/LoginPage/LogInPage';
 import SingUp from './Components/SignUp/SingUp';
 import Allproducts from './Components/AllProductsPage/Allproducts';
+import ShopingCartPage from './Components/ShopingCartPage/ShopingCartPage';
+
 const App = () => {
   return (
     <ContextProvider>
@@ -16,6 +18,7 @@ const App = () => {
           <Route path='/login' element={<LogInPage />} />
           <Route path='/signup' element={<SingUp />} />
           <Route path='/products' element={<Allproducts />} />
+          <Route path='/shopingcart' element={<ShopingCartPage />} />
         </Routes>
       </Router>
     </ContextProvider>

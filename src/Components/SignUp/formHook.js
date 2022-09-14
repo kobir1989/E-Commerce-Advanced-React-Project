@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 const useSignUp = (value) => {
   const [inputValue, setInputValue] = useState('');
   const [inputIsTouched, setInputIsTouched] = useState(false);

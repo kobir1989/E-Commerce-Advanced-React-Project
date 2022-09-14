@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import Modal from '../../UI/Modal';
 import Icons from '../../UI/Icons';
 import { Context } from '../../Store/context';
+import { Link } from 'react-router-dom';
 const Cart = ({ onCloseCart }) => {
   const ctx = useContext(Context);
   const removeItemHandler = (id) => {
@@ -91,7 +92,7 @@ const Cart = ({ onCloseCart }) => {
             Checkout Now $({Math.abs(ctx.totalPrice).toFixed(2)})
           </button>
           <button className='w-full border-[1px] border-[#FFC4C4] hover:border-red rounded-xl h-[2.5rem]'>
-            View Cart
+            <Link to='/shopingcart'> View Cart</Link>
           </button>
         </div>
       </section>

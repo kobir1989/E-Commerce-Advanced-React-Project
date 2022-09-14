@@ -3,22 +3,23 @@ import { v4 } from 'uuid';
 import BestSellerItems from './BestSellerItems';
 import BtnShopNow from '../../UI/BtnShopNow';
 import { Link } from 'react-router-dom';
-import fetchFromAPI from '../../UI/fetchFromAPI';
+
 const BestSeller = () => {
   const [product, setProduct] = useState([]);
-  fetchFromAPI('products?limit=8').then((data) => {
+  const getProduct = async () => {
+    const response = await fetch('https://fakestoreapi.com/products?limit=8');
+    const data = await response.json();
     const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
       price: item.price,
       img: item.image,
       id: v4(),
     }));
-
+    console.log(finalData);
     setProduct(finalData);
-  });
-
+  };
   useEffect(() => {
-    fetchFromAPI();
+    getProduct();
   }, []);
   return (
     <section className='3xl:w-8/12 lg:W-11/12 w-full mx-auto  mt-20'>
