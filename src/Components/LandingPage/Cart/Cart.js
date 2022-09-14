@@ -34,6 +34,13 @@ const Cart = ({ onCloseCart }) => {
           </span>
           <h3 className='text-[1.5rem]'>Your Cart</h3>
         </div>
+        {ctx.items.length === 0 ? (
+          <p className='text-center text-red font-medium'>
+            Your Cart is Empty! Please Add items to Cart
+          </p>
+        ) : (
+          ''
+        )}
         {ctx.items.map((cartItem) => (
           <div
             key={cartItem.id}

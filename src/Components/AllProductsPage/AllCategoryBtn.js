@@ -6,64 +6,93 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
     <div className='mt-20 flex flex-wrap lg:justify-between justify-center items-center'>
       <button
         className={
-          selectedCategory === ''
+          selectedCategory ===
+          'https://api.escuelajs.co/api/v1/categories/1/products'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/1/products'
+          )
+        }
       >
         All Products
       </button>
       <button
         className={
-          selectedCategory === ''
+          selectedCategory ===
+          'https://api.escuelajs.co/api/v1/categories/2/products'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/2/products'
+          )
+        }
       >
         Fashion
       </button>
       <button
         className={
-          selectedCategory === ''
+          selectedCategory ===
+          'https://api.escuelajs.co/api/v1/categories/3/products'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/3/products'
+          )
+        }
       >
         Men
       </button>
       <button
         className={
-          selectedCategory === ''
+          selectedCategory ===
+          'https://api.escuelajs.co/api/v1/categories/4/products'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/4/products'
+          )
+        }
       >
         Women
       </button>
       <button
         className={
-          selectedCategory === '/category/jewelery'
+          selectedCategory ===
+          'https://api.escuelajs.co/api/v1/categories/5/products'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('/category/jewelery')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/5/products'
+          )
+        }
       >
         Jewelery
       </button>
-      <button
+      {/* <button
         className={
           selectedCategory === '/category/electronics'
             ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
             : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
         }
-        onClick={() => setSelectedCategory('/category/electronics')}
+        onClick={() =>
+          setSelectedCategory(
+            'https://api.escuelajs.co/api/v1/categories/5/products'
+          )
+        }
       >
         Electronics
-      </button>
+      </button> */}
     </div>
   );
 };

@@ -7,8 +7,9 @@ import { Link } from 'react-router-dom';
 const BestSeller = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
-    const response = await fetch('https://fakestoreapi.com/products?limit=8');
+    const response = await fetch('https://fakestoreapi.com/products');
     const data = await response.json();
+    console.log(data);
     const finalData = data.map((item) => ({
       title: item.title.slice(0, 25),
       price: item.price,
