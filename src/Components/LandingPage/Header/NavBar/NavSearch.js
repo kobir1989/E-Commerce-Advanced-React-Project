@@ -18,7 +18,9 @@ const NavSearch = ({
     <section className='mt-6'>
       <div className=' m-4  flex justify-between items-center 3xl:w-8/12 lg:w-11/12  lg:mx-auto'>
         <div className=' flex items-center '>
-          <img className=' w-[4rem] lg:w-[7rem]' src={brandLogo} alt='' />
+          <Link to='/home'>
+            <img className=' w-[4rem] lg:w-[7rem]' src={brandLogo} alt='' />
+          </Link>
         </div>
         <div className='w-6/12 relative border-[1px] border-lightGray hover:border-red rounded-full'>
           <span className='lg:inline-block absolute bottom-4 right-6 text-lightGray'>

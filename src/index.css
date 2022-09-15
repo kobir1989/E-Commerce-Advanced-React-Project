@@ -27,3 +27,12 @@ body {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+.slick-arrow {
+  background-color: #5b5b5c !important;
+  border-radius: 50%;
+}
+
+.slick-next {
+  background-color: #5b5b5c !important;
+  border-radius: 50%;
+}

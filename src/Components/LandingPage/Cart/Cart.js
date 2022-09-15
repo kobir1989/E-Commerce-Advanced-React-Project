@@ -96,7 +96,9 @@ const Cart = ({ onCloseCart }) => {
         ))}
         <div className=' w-11/12 mx-auto mt-8'>
           <button className='bg-red hover:bg-[#EE6983] text-white w-full h-[2.5rem] rounded-xl mb-4'>
-            Checkout Now $({Math.abs(ctx.totalPrice).toFixed(2)})
+            <Link to='/login'>
+              Checkout Now $({Math.abs(ctx.totalPrice).toFixed(2)})
+            </Link>
           </button>
           <button className='w-full border-[1px] border-[#FFC4C4] hover:border-red rounded-xl h-[2.5rem]'>
             <Link to='/shopingcart'> View Cart</Link>

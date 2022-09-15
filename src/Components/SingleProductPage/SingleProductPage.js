@@ -6,9 +6,18 @@ import Icons from '../UI/Icons';
 import { Context } from '../Store/context';
 import Ratings from '../UI/Ratings';
 import BroughtTogether from './BroughtTogether';
+import RelatedProducts from './RelatedProducts';
+import Cart from '../LandingPage/Cart/Cart';
 const SingleProductPage = () => {
   const [product, setProduct] = useState({});
   const [isDisabled, setIsDisabled] = useState(true);
+  const [showCart, setShowCart] = useState(false);
+  const showCartHandler = () => {
+    setShowCart(true);
+  };
+  const closeCartHandler = () => {
+    setShowCart(!showCart);
+  };
   const ctx = useContext(Context);
   const [qntt] = ctx.items;
   const { id } = useParams();
@@ -26,7 +35,7 @@ const SingleProductPage = () => {
           description: data.description,
           price: data.price,
           key: data.id,
-          rating: data.rating,
+          rating: data.rating.count,
         };
         console.log(finalData);
         setProduct(finalData);
@@ -56,7 +65,8 @@ const SingleProductPage = () => {
   };
   return (
     <section>
-      <NavBar />
+      <NavBar onShowCart={showCartHandler} />
+      {showCart && <Cart onCloseCart={closeCartHandler} />}
       <div className='3xl:w-8/12 lg:W-11/12 w-full mx-auto  mt-20'>
         <div className='flex bg-white lg:p-20 p-8 rounded shadow lg:flex-row flex-col items-center justify-center'>
           <div className='lg:w-6/12 w-11/12 h-full'>
@@ -80,7 +90,7 @@ const SingleProductPage = () => {
             <div className='flex items-center gap-2 mb-4 text-[#FECD70]'>
               <span className='text-gray'>Rated: </span>
               <Ratings />
-              {/* <span className='text-gray'>({product.rating.count})</span> */}
+              <span className='text-gray'>({product.rating})</span>
             </div>
 
             <h4 className='text-[1.5rem] text-red'>${product.price}</h4>
@@ -130,6 +140,7 @@ const SingleProductPage = () => {
           </div>
         </div>
         <BroughtTogether />
+        <RelatedProducts />
       </div>
       <Footer />
     </section>

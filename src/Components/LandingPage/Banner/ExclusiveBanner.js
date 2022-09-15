@@ -3,7 +3,7 @@ import glass from '../../../Assets/glass.png';
 import bag from '../../../Assets/bag.png';
 import womenImg from '../../../Assets/women.png';
 import BtnShopNow from '../../UI/BtnShopNow';
-
+import { Link } from 'react-router-dom';
 const ExclusiveBanner = () => {
   return (
     <section className='3xl:w-8/12 lg:w-11/12 w-full mx-auto mt-20'>
@@ -15,7 +15,9 @@ const ExclusiveBanner = () => {
               <span className='text-[1.3rem] mt-[1.2rem]'>sunglasses</span>
               <br />
               <span className='text-red mt-[1.2rem]'>sale up to 30%</span>
-              <BtnShopNow btnName={'Shop Now'} />
+              <Link to='/discount'>
+                <BtnShopNow btnName={'Shop Now'} />
+              </Link>
             </h2>
           </div>
           <div className='w-6/12'>
@@ -29,7 +31,9 @@ const ExclusiveBanner = () => {
               <span className='text-[1.3rem] mt-[1.2rem]'>women's clothes</span>
               <br />
               <span className='text-red mt-[1.2rem]'>sale up to 15%</span>
-              <BtnShopNow btnName={'Shop Now'} />
+              <Link to='/discount'>
+                <BtnShopNow btnName={'Shop Now'} />
+              </Link>
             </h2>
           </div>
           <div className='w-6/12'>
@@ -43,7 +47,9 @@ const ExclusiveBanner = () => {
               <span className='text-[1.3rem] mt-[1.2rem]'>ladies purse</span>
               <br />
               <span className='text-red mt-[1.2rem]'>sale up to 25%</span>
-              <BtnShopNow btnName={'Shop Now'} />
+              <Link to='/discount'>
+                <BtnShopNow btnName={'Shop Now'} />
+              </Link>
             </h2>
           </div>
           <div className='w-6/12 '>
