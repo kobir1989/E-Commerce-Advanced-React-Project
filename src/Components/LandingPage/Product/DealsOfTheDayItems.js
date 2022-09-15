@@ -3,7 +3,9 @@ import Card from '../../UI/Card';
 import Button from '../../UI/Button';
 import Ratings from '../../UI/Ratings';
 import { Context } from '../../Store/context';
+import { useNavigate } from 'react-router-dom';
 const DealsOfTheDayItems = (props) => {
+  const navigate = useNavigate();
   const ctx = useContext(Context);
   const addItemHandler = (item) => {
     console.log(console.log(item));
@@ -18,7 +20,12 @@ const DealsOfTheDayItems = (props) => {
   return (
     <div className='flex flex-wrap items-center justify-center'>
       {props.product.map((item) => (
-        <Card key={item.id}>
+        <Card
+          key={item.id}
+          navigate={() => {
+            navigate(`/single-product/${item.params}`);
+          }}
+        >
           <div className='flex flex-col items-center justify-center h-full w-full'>
             <img
               src={item.img}

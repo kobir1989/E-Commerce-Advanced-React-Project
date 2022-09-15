@@ -7,7 +7,7 @@ import LogInPage from './Components/LoginPage/LogInPage';
 import SingUp from './Components/SignUp/SingUp';
 import Allproducts from './Components/AllProductsPage/Allproducts';
 import ShopingCartPage from './Components/ShopingCartPage/ShopingCartPage';
-
+import SingleProductPage from './Components/SingleProductPage/SingleProductPage';
 const App = () => {
   return (
     <ContextProvider>
@@ -19,6 +19,7 @@ const App = () => {
           <Route path='/signup' element={<SingUp />} />
           <Route path='/products' element={<Allproducts />} />
           <Route path='/shopingcart' element={<ShopingCartPage />} />
+          <Route path='/single-product/:id' element={<SingleProductPage />} />
         </Routes>
       </Router>
     </ContextProvider>

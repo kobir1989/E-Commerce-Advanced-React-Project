@@ -27,7 +27,7 @@ const Allproducts = () => {
         const finalData = data.map((item) => ({
           title: item.title.slice(0, 25),
           price: item.price,
-          img: item.images[1],
+          img: item.category.image,
           id: v4(),
         }));
         setAllProduct(finalData);

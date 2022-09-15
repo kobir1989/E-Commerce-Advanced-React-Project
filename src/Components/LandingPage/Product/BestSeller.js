@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const BestSeller = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
-    const response = await fetch('https://fakestoreapi.com/products');
+    const response = await fetch(`https://fakestoreapi.com/products/`);
     const data = await response.json();
     console.log(data);
     const finalData = data.map((item) => ({
@@ -15,6 +15,7 @@ const BestSeller = () => {
       price: item.price,
       img: item.image,
       id: v4(),
+      params: item.id,
     }));
     console.log(finalData);
     setProduct(finalData);

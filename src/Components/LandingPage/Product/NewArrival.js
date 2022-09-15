@@ -14,6 +14,7 @@ const NewArrival = () => {
       price: item.price,
       img: item.image,
       id: v4(),
+      params: item.id,
     }));
     console.log(finalData);
     setJwProduct(finalData);
