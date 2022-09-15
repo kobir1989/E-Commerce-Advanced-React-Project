@@ -5,6 +5,7 @@ import Button from '../UI/Button';
 import Ratings from '../UI/Ratings';
 
 const BestSellerItems = (props) => {
+  console.log(props.allProduct);
   const ctx = useContext(Context);
   const addItemHandler = (item) => {
     console.log(console.log(item));

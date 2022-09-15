@@ -1,10 +1,10 @@
 import React from 'react';
 
-const OrderDetailsForm = () => {
+const OrderDetailsForm = ({ totalAmount }) => {
   return (
     <form action=''>
       <div className='w-full mt-6'>
-        <label for='comments text-[1rem]'>
+        <label htmlFor='comments text-[1rem]'>
           Additional Comments
           <span className='text-red bg-[#FAD4D4] ml-4 px-2 rounde text-[.8rem]'>
             Note
@@ -32,7 +32,7 @@ const OrderDetailsForm = () => {
         </div>
         <div className='relative'>
           <label
-            for='country'
+            htmlFor='country'
             className='text-[.7rem] absolute top-2 bg-white  mx-[.8rem]'
           >
             Country
@@ -50,7 +50,7 @@ const OrderDetailsForm = () => {
         </div>
         <div className='relative'>
           <label
-            for='state'
+            htmlFor='state'
             className='text-[.7rem] absolute top-2 bg-white mx-[.8rem]'
           >
             State

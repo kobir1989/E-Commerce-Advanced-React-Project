@@ -14,21 +14,20 @@ const Allproducts = () => {
     setShowCart(!showCart);
   };
   const [allProduct, setAllProduct] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState('products');
+  const [selectedCategory, setSelectedCategory] = useState(
+    'https://api.escuelajs.co/api/v1/categories/1/products'
+  );
   console.log(selectedCategory);
-
   useEffect(() => {
     let isMount = true;
     const getData = async () => {
-      const response = await fetch(
-        `https://fakestoreapi.com/${selectedCategory}`
-      );
-      const data = response.json();
+      const response = await fetch(`${selectedCategory}`);
+      const data = await response.json();
       if (isMount) {
         const finalData = data.map((item) => ({
           title: item.title.slice(0, 25),
           price: item.price,
-          img: item.image,
+          img: item.category.image,
           id: v4(),
         }));
         setAllProduct(finalData);
