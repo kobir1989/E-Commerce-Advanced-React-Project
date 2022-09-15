@@ -4,20 +4,20 @@ import NavBar from '../LandingPage/Header/NavBar/NavBar';
 import Footer from '../LandingPage/Footer/Footer';
 import Icons from '../UI/Icons';
 import { Context } from '../Store/context';
-
+import Ratings from '../UI/Ratings';
+import BroughtTogether from './BroughtTogether';
 const SingleProductPage = () => {
   const [product, setProduct] = useState({});
   const [isDisabled, setIsDisabled] = useState(true);
-
   const ctx = useContext(Context);
   const [qntt] = ctx.items;
   const { id } = useParams();
-
   useEffect(() => {
     const getProduct = async () => {
       let isMount = true;
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
+      console.log(data);
       if (isMount) {
         console.log(data);
         const finalData = {
@@ -26,18 +26,17 @@ const SingleProductPage = () => {
           description: data.description,
           price: data.price,
           key: data.id,
+          rating: data.rating,
         };
         console.log(finalData);
         setProduct(finalData);
       }
-
       return () => {
         isMount = false;
       };
     };
     getProduct();
   }, [id]);
-
   const addItemHandler = (item) => {
     setIsDisabled(false);
     ctx.addItems({
@@ -48,7 +47,6 @@ const SingleProductPage = () => {
       qntt: 1,
     });
   };
-
   const removeItemHandler = (product) => {
     if (ctx.items.length === 0) {
       setIsDisabled(true);
@@ -75,11 +73,16 @@ const SingleProductPage = () => {
               </div>
             </div>
           </div>
-          <div className='lg:w-6/12 w-11/12'>
-            <h2 className='text-[1.5rem] mb-2'>{product.title}</h2>
-            <p className='text-[1rem] mb-2'>{product.description}</p>
+          <div className='lg:w-6/12 w-11/12 flex flex-col justify-start items-start'>
+            <h2 className='text-[1.5rem] mb-4'>{product.title}</h2>
+            <p className='text-[1rem] mb-4'>{product.description}</p>
             <h2 className='text-[1rem] font-medium mb-4'>Brand: Brand Name</h2>
-            <h2 className='text-[1rem] mb-4'>Rated: </h2>
+            <div className='flex items-center gap-2 mb-4 text-[#FECD70]'>
+              <span className='text-gray'>Rated: </span>
+              <Ratings />
+              {/* <span className='text-gray'>({product.rating.count})</span> */}
+            </div>
+
             <h4 className='text-[1.5rem] text-red'>${product.price}</h4>
             <p className='text-[1rem] mb-8'>Stock Available</p>
             <div className='flex gap-6 mb-6'>
@@ -126,8 +129,8 @@ const SingleProductPage = () => {
             </button>
           </div>
         </div>
+        <BroughtTogether />
       </div>
-
       <Footer />
     </section>
   );
