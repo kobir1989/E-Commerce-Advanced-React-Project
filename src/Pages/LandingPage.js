@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import Hero from '../Components/LandingPage/Header/Hero/Hero';
-import NavBar from '../Components/LandingPage/Header/NavBar/NavBar';
-import InfoBanner from '../Components/LandingPage/Banner/InfoBanner';
-import CategoryBanner from '../Components/LandingPage/Banner/CategoryBanner';
-import BlackFridayBanner from '../Components/LandingPage/Banner/BlackFridayBanner';
-import DealsOfTheDay from '../Components/LandingPage/Product/DealsOfTheDay';
-import SaleBanner from '../Components/LandingPage/Banner/SaleBanner';
-import NewArrival from '../Components/LandingPage/Product/NewArrival';
-import ExclusiveBanner from '../Components/LandingPage/Banner/ExclusiveBanner';
-import BestSeller from '../Components/LandingPage/Product/BestSeller';
-import Footer from '../Components/LandingPage/Footer/Footer';
-import Cart from '../Components/LandingPage/Cart/Cart';
-
+import Hero from '../Components/Hero/Hero';
+import NavBar from '../Components/NavBar/NavBar';
+import InfoBanner from '../Components/Banner/InfoBanner';
+import CategoryBanner from '../Components/Banner/CategoryBanner';
+import BlackFridayBanner from '../Components/Banner/BlackFridayBanner';
+import SaleBanner from '../Components/Banner/SaleBanner';
+import ExclusiveBanner from '../Components/Banner/ExclusiveBanner';
+import Footer from '../Components/Footer/Footer';
+import Cart from '../Components/CartModal/Cart';
+import BestSeller from '../Components/BestSeller/BestSeller';
+import DealsOfTheDay from '../Components/DealsOfTheDay/DealsOfTheDay';
+import NewArrival from '../Components/NewArrival/NewArrival';
 const LandingPage = () => {
   const [showCart, setShowCart] = useState(false);
   const showCartHandler = () => {
