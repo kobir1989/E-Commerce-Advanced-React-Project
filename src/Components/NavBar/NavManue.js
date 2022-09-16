@@ -1,7 +1,6 @@
 import React from 'react';
 import Icons from '../../Utils/Icons';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 const NavManue = ({ onCategory, showCategory, showManue }) => {
   return (
     <section className='lg:flex lg:justify-between lg:items-center lg:w-11/12 3xl:w-8/12   lg:mx-auto lg:mt-4 py-2 lg:relative text-gray'>

@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const Hero = () => {
   const [slider, setSlider] = useState();
   return (
-    <section className='lg:mt-20 mt-4 3xl:w-8/12 w-11/12 flex justify-between xl:flex-row items-center flex-col mx-auto'>
+    <section className=' lg:mt-20 mt-4 3xl:w-8/12 w-11/12 flex justify-between xl:flex-row items-center flex-col mx-auto'>
       <Slider
         {...settings}
         asSliderFor={slider}

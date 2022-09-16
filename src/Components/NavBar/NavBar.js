@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavManue from './NavManue';
 import NavSearch from './NavSearch';
-
+import StickyNav from './StickyNav';
 const NavBar = ({ onShowCart }) => {
   const [showCategory, setShowCategory] = useState(true);
   const [showManue, setShowManue] = useState(true);
@@ -30,6 +30,7 @@ const NavBar = ({ onShowCart }) => {
         showCategory={showCategory}
         showManue={showManue}
       />
+      <StickyNav />
     </nav>
   );
 };
