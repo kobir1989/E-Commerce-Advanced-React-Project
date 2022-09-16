@@ -59,7 +59,7 @@ const DiscountPage = () => {
       </header>
       <main>
         <DiscountPoster />
-        <section className='3xl:w-8/12 w-11/12 mx-auto mt-[10rem]'>
+        <section className='3xl:w-8/12 w-11/12 mx-auto mt-[4rem] lg:mt-[10rem]'>
           <div className=' w-full flex flex-wrap items-center lg:justify-between justify-center gap-12'>
             {product.map((item) => (
               <div

@@ -48,27 +48,35 @@ const posterData = [
 const DiscountPoster = () => {
   const [posterSlider, setPosterSlider] = useState();
   return (
-    <section className='lg:mt-20 mt-4 3xl:w-8/12 w-11/12 mx-auto'>
+    <section className='lg:mt-20 mt-4 3xl:w-8/12 w-10/12 mx-auto'>
       <Slider
         {...settings}
         asSliderFor={posterSlider}
         reference={(slider) => setPosterSlider(slider)}
       >
         {posterData.map((poster) => (
-          <div className='w-[100%] h-[38rem] relative'>
-            <img className='z-0 w-[100%] h-[100%]' src={poster.imgUrl} alt='' />
-            <div className='absolute z-40 top-[25%] right-10'>
-              <h1 className='text-[#0F3460] text-[2.5rem] uppercase'>
+          <div className='w-[100%] lg:h-[38rem] h-[30rem] relative'>
+            <div>
+              <img
+                className='z-0 w-[100%] h-[100%]'
+                src={poster.imgUrl}
+                alt=''
+              />
+            </div>
+            <div className='absolute z-40 lg:top-[30%] top-[40%] lg:right-10 '>
+              <h1 className='text-[#0F3460] lg:text-[2.5rem] text-[1.5rem]  uppercase'>
                 {poster.title}
               </h1>
-              <h2 className='text-[#0F3460] text-[4rem] uppercase'>
+              <h2 className='text-[#0F3460] lg:text-[4rem] text-[2rem] uppercase'>
                 {poster.titleMd}
               </h2>
-              <h2 className='text-red text-[2.5rem] uppercase'>
+              <h2 className='text-red lg:text-[2.5rem] text-[1.5rem] uppercase'>
                 {poster.saleTag}
               </h2>
-              <h3 className='text-[1.8rem] text-[#0F3460]'>{poster.titlesm}</h3>
-              <button className='w-[12rem] h-[3rem] bg-red text-[#FAF3E3] mt-6 font-bold hover:bg-[#F24C4C]'>
+              <h3 className='lg:text-[1.8rem] text-[.8rem] text-[#0F3460]'>
+                {poster.titlesm}
+              </h3>
+              <button className='w-[12rem] h-[3rem] bg-red text-white mt-6 font-bold hover:bg-[#F24C4C]'>
                 Shop Now
               </button>
             </div>
