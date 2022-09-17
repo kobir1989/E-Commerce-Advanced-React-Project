@@ -7,11 +7,11 @@ import { Link } from 'react-router-dom';
 const FetchProductsFromAPI = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
-    const response = await fetch('https://fakestoreapi.com/products?limit=8');
+    const response = await fetch('https://fakestoreapi.com/products');
     const data = await response.json();
 
     const finalData = data.map((item) => ({
-      title: item.title.slice(0, 25),
+      title: item.title.slice(0, 22),
       price: item.price,
       img: item.image,
       id: v4(),
@@ -28,11 +28,6 @@ const FetchProductsFromAPI = () => {
     <>
       <div className='flex items-center justify-center'>
         <ProductRenderBody product={product} />
-      </div>
-      <div className='flex items-center justify-center'>
-        <Link to='/products'>
-          <BtnShopNow btnName={'Browse More'} />
-        </Link>
       </div>
     </>
   );
