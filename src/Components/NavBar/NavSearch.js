@@ -3,17 +3,20 @@ import Icons from '../../Utils/Icons';
 import brandLogo from '../../Assets/ecom-logo.png';
 import { Link } from 'react-router-dom';
 import { Context } from '../../Store/context';
+import { WishContext } from '../../Store/context';
 const NavSearch = ({
   onManue,
   showManue,
   onLoginBtn,
   onShowCart,
   showUserLogin,
+  onOpenWishList,
 }) => {
+  const wishCtx = useContext(WishContext);
   const ctx = useContext(Context);
   const cartItemQntt = ctx.items.map((item) => item.qntt);
   const totalQntt = cartItemQntt.reduce((acc, ele) => acc + ele, 0);
-
+  console.log(wishCtx);
   return (
     <section className='mt-6'>
       <div className=' m-4  flex justify-between items-center 3xl:w-8/12 lg:w-11/12  lg:mx-auto'>
@@ -47,7 +50,7 @@ const NavSearch = ({
 
         <div className=' hidden lg:flex text-gray relative'>
           <button
-            className='mx-6 bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'
+            className=' bg-[#f5f5f5] w-[3rem] h-[3rem] rounded-full hover:text-red flex items-center justify-center'
             onClick={onLoginBtn}
           >
             <span className='text-[1.2rem]'>
@@ -55,7 +58,7 @@ const NavSearch = ({
             </span>
           </button>
           <button
-            className='relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'
+            className='mx-6 relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'
             onClick={onShowCart}
           >
             <span className='px-2 text-white absolute -right-2 -top-4 rounded-full bg-red'>
@@ -63,6 +66,17 @@ const NavSearch = ({
             </span>
             <span className='text-[1.5rem]'>
               <Icons name={'Cart'} />
+            </span>
+          </button>
+          <button
+            className='relative bg-[#f5f5f5] w-[3rem]  h-[3rem] rounded-full hover:text-red items-center flex justify-center'
+            onClick={onOpenWishList}
+          >
+            <span className='px-2 text-white absolute -right-2 -top-4 rounded-full bg-red'>
+              {wishCtx.wishList.length}
+            </span>
+            <span className='text-[1.5rem]'>
+              <Icons name={'Heart'} />
             </span>
           </button>
           {!showUserLogin && (

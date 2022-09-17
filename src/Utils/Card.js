@@ -18,7 +18,7 @@ const Card = (props) => {
             <Icons name={'Eye'} />
           </span>
         </button>
-        <button>
+        <button onClick={props.addToWishList}>
           <span>
             <Icons name={'Heart'} />
           </span>

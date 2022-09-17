@@ -4,9 +4,12 @@ import { Context } from '../../Store/context';
 import Button from '../../Utils/Button';
 import Ratings from '../../Utils/Ratings';
 import { useNavigate } from 'react-router-dom';
+import { v4 } from 'uuid';
+import { WishContext } from '../../Store/context';
 const ProductRenderBody = ({ product }) => {
   const navigate = useNavigate();
   const ctx = useContext(Context);
+  const wishCtx = useContext(WishContext);
   const addItemHandler = (item) => {
     console.log(console.log(item));
     ctx.addItems({
@@ -15,6 +18,14 @@ const ProductRenderBody = ({ product }) => {
       id: item.id,
       img: item.img,
       qntt: 1,
+    });
+  };
+  const addToWishLists = (item) => {
+    wishCtx.addToWishList({
+      title: item.title,
+      price: item.price,
+      id: item.id,
+      img: item.img,
     });
   };
   return (
@@ -26,6 +37,9 @@ const ProductRenderBody = ({ product }) => {
           title={item.title}
           price={item.price}
           img={item.img}
+          addToWishList={() => {
+            addToWishLists(item);
+          }}
           navigate={() => {
             navigate(`/single-product/${item.params}`);
           }}

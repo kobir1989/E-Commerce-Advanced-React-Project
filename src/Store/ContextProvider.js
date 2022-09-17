@@ -56,7 +56,6 @@ const reducer = (state, action) => {
   }
   return initialState;
 };
-
 const ContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   console.log(state);

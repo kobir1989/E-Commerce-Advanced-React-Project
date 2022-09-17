@@ -11,19 +11,32 @@ import Cart from '../Components/CartModal/Cart';
 import BestSeller from '../Components/BestSeller/BestSeller';
 import DealsOfTheDay from '../Components/DealsOfTheDay/DealsOfTheDay';
 import NewArrival from '../Components/NewArrival/NewArrival';
+import WishListPopUp from '../Components/PopUpModal/WishListPopUp';
 const LandingPage = () => {
   const [showCart, setShowCart] = useState(false);
+  const [openWishList, setOpenWishList] = useState(false);
   const showCartHandler = () => {
     setShowCart(true);
   };
   const closeCartHandler = () => {
     setShowCart(!showCart);
   };
+  const openWishListHandler = () => {
+    setOpenWishList(true);
+    console.log('clicked');
+  };
+  const hideWishListHandler = () => {
+    setOpenWishList(!openWishList);
+  };
   return (
     <>
       {showCart && <Cart onCloseCart={closeCartHandler} />}
+      {openWishList && <WishListPopUp onCloseWishList={hideWishListHandler} />}
       <header>
-        <NavBar onShowCart={showCartHandler} />
+        <NavBar
+          onShowCart={showCartHandler}
+          onOpenWishList={openWishListHandler}
+        />
         <Hero />
       </header>
       <main>
