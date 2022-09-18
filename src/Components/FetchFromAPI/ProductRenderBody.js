@@ -25,6 +25,7 @@ const ProductRenderBody = ({ product }) => {
       price: item.price,
       id: item.id,
       img: item.img,
+      params: item.params,
     });
   };
   return (
@@ -36,6 +37,7 @@ const ProductRenderBody = ({ product }) => {
           title={item.title}
           price={item.price}
           img={item.img}
+          params={item.params}
           description={item.description}
           addToWishList={() => {
             addToWishLists(item);
