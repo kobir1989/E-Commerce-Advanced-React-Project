@@ -159,6 +159,7 @@ body {
   }
 }
 
+<<<<<<< HEAD
 .bump {
   animation: bump 300ms ease-out;
 }
@@ -230,4 +231,16 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+=======
+.card_design::before {
+  content: '';
+  border-bottom: 8px solid #9e1a46;
+  border-left: 8px solid #fff;
+  border-right: 8px solid #9e1a46;
+  border-top: 8px solid #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: drop-shadow(6px 4px 3px rgba(0, 0, 0, 0.4));
+>>>>>>> test
 }

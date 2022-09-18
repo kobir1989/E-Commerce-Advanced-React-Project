@@ -56,9 +56,13 @@ const RelatedProducts = () => {
             onClick={() => {
               navigate(`/single-product/${item.params}`);
             }}
-            className='relative cursor-pointer hover:shadow-2xl rounded-xl flex flex-col items-center justify-between p-4 bg-white w-10/12 lg:w-[16rem] h-[22rem]'
+            className='relative cursor-pointer hover:shadow-2xl rounded-xl flex flex-col 
+            items-center justify-between p-4 bg-white w-10/12 lg:w-[16rem] h-[22rem]'
           >
-            <div className='bg-red w-[4.5rem] h-[2rem] rounded-2xl absolute left-2 flex justify-center items-center'>
+            <div
+              className='bg-red w-[4.5rem] h-[2rem] rounded-2xl absolute left-2 flex
+             justify-center items-center'
+            >
               <p className='text-white font-meduim text-[1rem]'>15% off</p>
             </div>
             <div className='w-[8rem] h-[10rem]'>
@@ -76,7 +80,8 @@ const RelatedProducts = () => {
                 </h3>
                 <div>
                   <button
-                    className=' flex justify-center items-center w-[2rem] h-[2rem] border-[1px] border-[#FFC4C4] hover:border-red rounded'
+                    className=' flex justify-center items-center w-[2rem] h-[2rem] border-[1px] 
+                    border-[#FFC4C4] hover:border-red rounded'
                     onClick={() => {
                       addItemHandler(item);
                     }}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Hero from '../Components/Hero/Hero';
 import NavBar from '../Components/NavBar/NavBar';
 import InfoBanner from '../Components/Banner/InfoBanner';
@@ -11,19 +11,19 @@ import Cart from '../Components/CartModal/Cart';
 import BestSeller from '../Components/BestSeller/BestSeller';
 import DealsOfTheDay from '../Components/DealsOfTheDay/DealsOfTheDay';
 import NewArrival from '../Components/NewArrival/NewArrival';
+import WishListPopUp from '../Components/PopUpModal/WishListPopUp';
+import ProductPopUp from '../Components/PopUpModal/ProductPopUp';
+import { ModalContext } from '../Store/context';
+import { useContext } from 'react';
 const LandingPage = () => {
-  const [showCart, setShowCart] = useState(false);
-  const showCartHandler = () => {
-    setShowCart(true);
-  };
-  const closeCartHandler = () => {
-    setShowCart(!showCart);
-  };
+  const modalCtx = useContext(ModalContext);
   return (
     <>
-      {showCart && <Cart onCloseCart={closeCartHandler} />}
+      {modalCtx.openProductModal && <ProductPopUp />}
+      {modalCtx.showCart && <Cart />}
+      {modalCtx.openWishList && <WishListPopUp />}
       <header>
-        <NavBar onShowCart={showCartHandler} />
+        <NavBar />
         <Hero />
       </header>
       <main>

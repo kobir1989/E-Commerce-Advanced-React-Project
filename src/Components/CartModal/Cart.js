@@ -2,14 +2,15 @@ import React, { useContext } from 'react';
 import Modal from '../../Utils/Modal';
 import Icons from '../../Utils/Icons';
 import { Context } from '../../Store/context';
+import { ModalContext } from '../../Store/context';
 import { Link } from 'react-router-dom';
-const Cart = ({ onCloseCart }) => {
+const Cart = () => {
   const ctx = useContext(Context);
+  const modalCtx = useContext(ModalContext);
   const removeItemHandler = (id) => {
     ctx.removeItem(id);
   };
   const addItemHandler = (item) => {
-    console.log(console.log(item));
     ctx.addItems({
       title: item.title,
       price: item.price,
@@ -19,16 +20,19 @@ const Cart = ({ onCloseCart }) => {
     });
   };
   return (
-    <Modal onClose={onCloseCart}>
+    <Modal onClose={modalCtx.closeCartHandler}>
       <section className='lg:w-[30rem] w-[80vw] h-[80vh] relative overflow-y-scroll relative'>
-        <div className='absolute right-4 top-1 w-[2.5rem] h-[2.5rem] rounded-full bg-[#F7F5F2] flex justify-center items-center'>
-          <button onClick={onCloseCart}>
+        <div
+          className='absolute right-4 top-1 w-[2.5rem] h-[2.5rem] rounded-full
+         bg-[#F7F5F2] flex justify-center items-center'
+        >
+          <button onClick={modalCtx.closeCartHandler}>
             <span className='text-[1.4rem] text-red'>
               <Icons name={'Cross'} />
             </span>
           </button>
         </div>
-        <div className='flex items-center w-full justify-start  mb-6   pb-4'>
+        <div className='flex items-center w-full justify-start  mb-6 pb-4'>
           <span className='ml-4 text-[2rem] mr-4'>
             <Icons name={'Cart'} />
           </span>
@@ -44,11 +48,13 @@ const Cart = ({ onCloseCart }) => {
         {ctx.items.map((cartItem) => (
           <div
             key={cartItem.id}
-            className='border-b-[1px] border-t-[.5px]  border-[#F2F2F2] py-6 flex justify-between items-center m-4'
+            className='border-[.2px] rounded-3xl border-[#EAF6F6]
+             py-6 flex justify-between items-center m-2 px-2'
           >
             <div className='flex flex-col justify-between items-center'>
               <button
-                className=' flex justify-center items-center w-[2rem] h-[2rem] border-[1px] border-red rounded-full'
+                className=' flex justify-center items-center w-[2rem]
+                 h-[2rem] border-[1px] border-red rounded-full'
                 onClick={() => {
                   addItemHandler(cartItem);
                 }}

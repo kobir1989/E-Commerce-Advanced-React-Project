@@ -20,14 +20,14 @@ const posterData = [
     titleMd: 'Weekend Sale',
     saleTag: 'Up to 25% Off',
   },
-  {
-    id: v4(),
-    imgUrl: require('../../Assets/poster-3.jpg'),
-    title: 'New Arrivals',
-    titlesm: 'Get Free Shipping on orders pver $99.00',
-    titleMd: 'Big sell ',
-    saleTag: 'Up to 25% Off',
-  },
+  // {
+  //   id: v4(),
+  //   imgUrl: require('../../Assets/poster-8.jpg'),
+  //   title: 'New Arrivals',
+  //   titlesm: 'Get Free Shipping on orders pver $99.00',
+  //   titleMd: 'Big sell ',
+  //   saleTag: 'Up to 25% Off',
+  // },
   {
     id: v4(),
     imgUrl: require('../../Assets/poster-4.png'),

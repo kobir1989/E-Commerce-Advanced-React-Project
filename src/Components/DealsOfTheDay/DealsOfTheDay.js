@@ -1,13 +1,14 @@
 import React from 'react';
 import FetchProductsFromAPI from '../FetchFromAPI/FetchProductsFromAPI';
 import SectionWrapper from '../../Utils/SectionWrapper';
-const DealsOfTheDay = () => {
+
+const DealsOfTheDay = ({ openProductHandler }) => {
   return (
     <SectionWrapper>
       <div className='text-center text-[2.5rem] mb-8'>
         <h2>Deals Of The Day</h2>
       </div>
-      <FetchProductsFromAPI />
+      <FetchProductsFromAPI openProductHandler={openProductHandler} />
     </SectionWrapper>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import SectionWrapper from '../../Utils/SectionWrapper';
 import AllCategoryBtn from './AllCategoryBtn';
-import ProductRenderBody from '../ProductRenderBody';
+import ProductRenderBody from '../FetchFromAPI/ProductRenderBody';
 import { v4 } from 'uuid';
 const AllProducts = () => {
   const [allProduct, setAllProduct] = useState([]);
@@ -30,13 +30,17 @@ const AllProducts = () => {
     };
   }, [selectedCategory]);
   return (
-    <SectionWrapper>
-      <AllCategoryBtn
-        selectedCategory={selectedCategory}
-        setSelectedCategory={setSelectedCategory}
-      />
-      <ProductRenderBody product={allProduct} />
-    </SectionWrapper>
+    <>
+      <SectionWrapper>
+        <AllCategoryBtn
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+        />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ProductRenderBody product={allProduct} />
+      </SectionWrapper>
+    </>
   );
 };
 

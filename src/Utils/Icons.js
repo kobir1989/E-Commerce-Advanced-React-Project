@@ -11,7 +11,7 @@ import {
   FaRegEnvelope,
   FaHome,
   FaArrowRight,
-  FaHeart,
+  FaRegHeart,
   FaGooglePlay,
   FaApple,
   FaFacebookF,
@@ -68,7 +68,7 @@ const Icons = ({ name }) => {
     case 'ArrowLeft':
       return <FaChevronLeft />;
     case 'Heart':
-      return <FaHeart />;
+      return <FaRegHeart />;
     case 'Eye':
       return <AiOutlineEye />;
     case 'Apple':

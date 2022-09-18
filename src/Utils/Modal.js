@@ -16,7 +16,6 @@ const ModalOverlay = (props) => {
     </div>
   );
 };
-
 const Modal = (props) => {
   return (
     <>

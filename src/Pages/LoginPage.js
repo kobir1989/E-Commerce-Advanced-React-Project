@@ -3,6 +3,7 @@ import LogInForm from '../Components/LoginForm/LogInForm';
 import NavBar from '../Components/NavBar/NavBar';
 import Footer from '../Components/Footer/Footer';
 import Cart from '../Components/CartModal/Cart';
+
 const LoginPage = () => {
   const [showCart, setShowCart] = useState(false);
   const showCartHandler = () => {

@@ -1,42 +1,11 @@
-import { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
 import Icons from '../../Utils/Icons';
 import { Context } from '../../Store/context';
 import Ratings from '../../Utils/Ratings';
-import BroughtTogether from '../RelatedProducts/BroughtTogether';
-import RelatedProducts from '../RelatedProducts/RelatedProducts';
 import SectionWrapper from '../../Utils/SectionWrapper';
-const SingleProduct = () => {
-  const [product, setProduct] = useState({});
-  const [isDisabled, setIsDisabled] = useState(true);
+const SingleProduct = ({ product, isDisabled, setIsDisabled }) => {
   const ctx = useContext(Context);
   const [qntt] = ctx.items;
-  const { id } = useParams();
-  useEffect(() => {
-    const getProduct = async () => {
-      let isMount = true;
-      const response = await fetch(`https://fakestoreapi.com/products/${id}`);
-      const data = await response.json();
-      console.log(data);
-      if (isMount) {
-        console.log(data);
-        const finalData = {
-          title: data.title.slice(11),
-          img: data.image,
-          description: data.description,
-          price: data.price,
-          key: data.id,
-          rating: data.rating.count,
-        };
-        console.log(finalData);
-        setProduct(finalData);
-      }
-      return () => {
-        isMount = false;
-      };
-    };
-    getProduct();
-  }, [id]);
   const addItemHandler = (item) => {
     setIsDisabled(false);
     ctx.addItems({
@@ -127,8 +96,6 @@ const SingleProduct = () => {
           </button>
         </div>
       </div>
-      <BroughtTogether />
-      <RelatedProducts />
     </SectionWrapper>
   );
 };

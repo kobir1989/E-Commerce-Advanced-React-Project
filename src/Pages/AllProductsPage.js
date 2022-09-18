@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import NavBar from '../Components/NavBar/NavBar';
 import Footer from '../Components/Footer/Footer';
 import Cart from '../Components/CartModal/Cart';
-import AllProducts from '../Components/FetchFromAPI/FetchProductsFromAPI';
-import SectionWrapper from '../Utils/SectionWrapper';
+import AllProducts from '../Components/AllProducts/AllProducts';
 const AllProductsPage = () => {
   const [showCart, setShowCart] = useState(false);
   const showCartHandler = () => {
@@ -16,9 +15,7 @@ const AllProductsPage = () => {
     <>
       <NavBar onShowCart={showCartHandler} />
       {showCart && <Cart onCloseCart={closeCartHandler} />}
-      <SectionWrapper>
-        <AllProducts />
-      </SectionWrapper>
+      <AllProducts />
       <Footer />
     </>
   );
