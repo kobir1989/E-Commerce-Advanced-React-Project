@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Icons from './Icons';
 import './Card.css';
-
+import { ModalContext } from '../Store/context';
 const Card = (props) => {
+  const modalCtx = useContext(ModalContext);
   return (
     <div
       className='cart-back rounded-br-3xl rounded-xl relative card
@@ -11,10 +12,14 @@ const Card = (props) => {
     >
       <div
         className='flex flex-col wish_btn absolute top-4 
-      right-4 text-red text-[1.5rem] z-40'
+      right-4 text-red text-[1.5rem] z-20'
       >
-        <button className='mb-4'>
-          <span onClick={props.navigate}>
+        <button className='mb-4' onClick={modalCtx.openProductHandler}>
+          <span
+            onClick={() => {
+              modalCtx.addToModal(props);
+            }}
+          >
             <Icons name={'Eye'} />
           </span>
         </button>
@@ -31,7 +36,7 @@ const Card = (props) => {
         >
           <p className='text-white font-meduim text-[1rem]'>15% off</p>
         </div>
-        <div className='w-[100%] h-[60%] mx-auto p-4'>
+        <div className='w-[100%] h-[60%] mx-auto p-4' onClick={props.navigate}>
           <img className='w-full h-full' src={props.img} alt='' />
         </div>
         <div className='pl-4'>

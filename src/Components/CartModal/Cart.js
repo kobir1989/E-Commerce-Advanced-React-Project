@@ -2,14 +2,15 @@ import React, { useContext } from 'react';
 import Modal from '../../Utils/Modal';
 import Icons from '../../Utils/Icons';
 import { Context } from '../../Store/context';
+import { ModalContext } from '../../Store/context';
 import { Link } from 'react-router-dom';
-const Cart = ({ onCloseCart }) => {
+const Cart = () => {
   const ctx = useContext(Context);
+  const modalCtx = useContext(ModalContext);
   const removeItemHandler = (id) => {
     ctx.removeItem(id);
   };
   const addItemHandler = (item) => {
-    console.log(console.log(item));
     ctx.addItems({
       title: item.title,
       price: item.price,
@@ -19,13 +20,13 @@ const Cart = ({ onCloseCart }) => {
     });
   };
   return (
-    <Modal onClose={onCloseCart}>
+    <Modal onClose={modalCtx.closeCartHandler}>
       <section className='lg:w-[30rem] w-[80vw] h-[80vh] relative overflow-y-scroll relative'>
         <div
           className='absolute right-4 top-1 w-[2.5rem] h-[2.5rem] rounded-full
          bg-[#F7F5F2] flex justify-center items-center'
         >
-          <button onClick={onCloseCart}>
+          <button onClick={modalCtx.closeCartHandler}>
             <span className='text-[1.4rem] text-red'>
               <Icons name={'Cross'} />
             </span>

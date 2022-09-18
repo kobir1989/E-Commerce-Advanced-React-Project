@@ -58,7 +58,6 @@ const reducer = (state, action) => {
 };
 const ContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  console.log(state);
   const addTocartHandler = (item) => {
     dispatch({
       type: 'ADD',

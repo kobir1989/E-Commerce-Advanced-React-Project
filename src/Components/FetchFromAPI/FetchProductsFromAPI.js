@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { v4 } from 'uuid';
 import ProductRenderBody from './ProductRenderBody';
-import BtnShopNow from '../../Utils/BtnShopNow';
-import { Link } from 'react-router-dom';
-
 const FetchProductsFromAPI = () => {
   const [product, setProduct] = useState([]);
   const getProduct = async () => {
@@ -15,14 +12,13 @@ const FetchProductsFromAPI = () => {
       img: item.image,
       id: v4(),
       params: item.id,
+      description: item.description,
     }));
-
     setProduct(finalData);
   };
   useEffect(() => {
     getProduct();
   }, []);
-
   return (
     <>
       <div className='flex items-center justify-center'>
@@ -31,5 +27,4 @@ const FetchProductsFromAPI = () => {
     </>
   );
 };
-
 export default FetchProductsFromAPI;
