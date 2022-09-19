@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavManue from './NavManue';
 import NavSearch from './NavSearch';
-const NavBar = ({ onShowCart, onOpenWishList }) => {
+const NavBar = ({}) => {
   const [showCategory, setShowCategory] = useState(true);
   const [showManue, setShowManue] = useState(true);
   const [showUserLogin, setShowUserLogin] = useState(true);
@@ -21,8 +21,6 @@ const NavBar = ({ onShowCart, onOpenWishList }) => {
         showManue={showManue}
         onLoginBtn={loginBtnHandler}
         showUserLogin={showUserLogin}
-        onShowCart={onShowCart}
-        onOpenWishList={onOpenWishList}
       />
       <NavManue
         onCategory={categoryHandler}
