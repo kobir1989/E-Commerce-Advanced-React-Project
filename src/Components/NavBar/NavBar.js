@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavManue from './NavManue';
 import NavSearch from './NavSearch';
-const NavBar = ({}) => {
+const NavBar = () => {
   const [showCategory, setShowCategory] = useState(true);
   const [showManue, setShowManue] = useState(true);
   const [showUserLogin, setShowUserLogin] = useState(true);

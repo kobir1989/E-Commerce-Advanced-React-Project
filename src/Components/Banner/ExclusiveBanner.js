@@ -7,8 +7,14 @@ import { Link } from 'react-router-dom';
 const ExclusiveBanner = () => {
   return (
     <section className='3xl:w-8/12 lg:w-11/12 w-full mx-auto mt-20'>
-      <div className='flex lg:flex-row flex-col items-center justify-between uppercase'>
-        <div className='w-full lg:w-4/12 h-[12rem] flex items-center  bg-[#F7ECDE]'>
+      <div
+        className='flex lg:flex-row flex-col items-center 
+      justify-between uppercase'
+      >
+        <div
+          className='w-full lg:w-4/12 h-[12rem] flex items-center  
+       bg-gradient-to-r from-[#FCF8E8] to-[#CDC2AE] rounded-xl '
+        >
           <div className='w-6/12 ml-6'>
             <h2 className='text-[1rem]'>
               Exclusive Collection <br />
@@ -20,11 +26,14 @@ const ExclusiveBanner = () => {
               </Link>
             </h2>
           </div>
-          <div className='w-6/12'>
+          <div className='w-6/12 drop-shadow-lg'>
             <img className='w-full h-full' src={glass} alt='' />
           </div>
         </div>
-        <div className='w-full lg:w-4/12 h-[12rem] flex items-center  bg-[#16213E] lg:mx-4 my-4 lg:my-0'>
+        <div
+          className='w-full lg:w-4/12 h-[12rem] flex items-center  
+       bg-gradient-to-r from-[#16213E] to-[#4D4C7D] rounded-xl lg:mx-4 my-4 lg:my-0'
+        >
           <div className='w-6/12 ml-6'>
             <h2 className='text-white text-[1rem]'>
               Exclusive Collection <br />
@@ -36,11 +45,14 @@ const ExclusiveBanner = () => {
               </Link>
             </h2>
           </div>
-          <div className='w-6/12'>
+          <div className='w-6/12 drop-shadow-lg'>
             <img className='w-full h-[12rem]' src={womenImg} alt='' />
           </div>
         </div>
-        <div className='w-full lg:w-4/12 h-[12rem] flex items-center bg-[#D7C0AE]'>
+        <div
+          className='w-full lg:w-4/12 h-[12rem] flex items-center
+         bg-gradient-to-r from-[#FCF8E8] to-[#D7C0AE] rounded-xl '
+        >
           <div className='w-6/12 ml-6'>
             <h2 className='text-[1rem]'>
               Exclusive Collection <br />
@@ -52,7 +64,7 @@ const ExclusiveBanner = () => {
               </Link>
             </h2>
           </div>
-          <div className='w-6/12 '>
+          <div className='w-6/12 drop-shadow-lg'>
             <img className='w-full h-full' src={bag} alt='' />
           </div>
         </div>

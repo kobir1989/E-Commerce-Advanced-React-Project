@@ -13,7 +13,9 @@ const FetchProductsFromAPI = () => {
       setIsError(null);
       setIsLoading(true);
       try {
-        const response = await fetch('https://fakestoreapi.com/products');
+        const response = await fetch(
+          'https://fakestoreapi.com/products?limit=4'
+        );
         if (!response.ok) {
           throw new Error(isError);
         }
@@ -38,7 +40,7 @@ const FetchProductsFromAPI = () => {
     return () => {
       isMount = false;
     };
-  }, []);
+  }, [isError]);
   return (
     <>
       <div className='flex items-center justify-center'>

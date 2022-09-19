@@ -27,7 +27,6 @@ const LandingPage = () => {
         <Hero />
       </header>
       <main>
-        <InfoBanner />
         <CategoryBanner />
         <BlackFridayBanner />
         <DealsOfTheDay />
@@ -35,6 +34,7 @@ const LandingPage = () => {
         <NewArrival />
         <ExclusiveBanner />
         <BestSeller />
+        <InfoBanner />
       </main>
       <footer>
         <Footer />

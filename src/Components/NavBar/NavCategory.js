@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Icons from '../../Utils/Icons';
-const NavCategory = () => {
+import { Link } from 'react-router-dom';
+const NavCategory = ({ showCategory, onCategory }) => {
   return (
     <div
       className='bg-white rounded shadow-xl absolute -top-[-3rem]

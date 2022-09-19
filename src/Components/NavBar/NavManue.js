@@ -1,8 +1,8 @@
 import React from 'react';
 import Icons from '../../Utils/Icons';
 import { Link } from 'react-router-dom';
-import NavCategory from './NavCategory';
 import './NavBar.css';
+import NavCategory from './NavCategory';
 const NavManue = ({ onCategory, showCategory, showManue }) => {
   return (
     <section
@@ -39,47 +39,29 @@ const NavManue = ({ onCategory, showCategory, showManue }) => {
         }
       >
         <ul className='flex lg:flex-row  flex-col mx-10 lg:mx-0 z-20'>
-          <li
-            className='my-4 lg:my-0 mx-3 hover:text-red flex justify-between
-           lg:items-center'
-          >
+          <li className='my-4 lg:my-0 mx-3 hover:text-red flex justify-between lg:items-center'>
             <Link to='/home'>Home</Link>
           </li>
-          <li
-            className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between
-           lg:items-center'
-          >
+          <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
             <Link to=''>Mega Menue</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
-          <li
-            className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between
-           lg:items-center'
-          >
+          <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
             <Link to='/login'>User Account</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
-          <li
-            className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between
-           lg:items-center'
-          >
+          <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
             <Link to=''>Vendor Account</Link>
             <span className='ml-2'>
               <Icons name={'ArrowDown'} />
             </span>
           </li>
-          <li
-            className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between
-           lg:items-center'
-          >
-            <Link to='/products'>Pages</Link>
-            <span className='ml-2'>
-              <Icons name={'ArrowDown'} />
-            </span>
+          <li className='my-4 lg:my-0 mx-3 hover:text-red  flex justify-between lg:items-center'>
+            <Link to='/products'>All Products</Link>
           </li>
         </ul>
       </div>
