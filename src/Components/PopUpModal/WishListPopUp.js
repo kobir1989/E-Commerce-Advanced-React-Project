@@ -11,6 +11,7 @@ const WishListPopUp = () => {
   const navigate = useNavigate();
   const wishCtx = useContext(WishContext);
   const modalCtx = useContext(ModalContext);
+
   return (
     <Modal onClose={modalCtx.hideWishListHandler}>
       <div className=' lg:w-[25vw] overflow-y-scroll w-[80vw] h-[80vh]'>
@@ -25,16 +26,31 @@ const WishListPopUp = () => {
             <Icons name={'Cross'} />
           </button>
         </div>
-        <div className='lg:p-8 p-1'>
+        {wishCtx.wishList.length === 0 ? (
+          <p className='text-red text-[.9rem] text-center mt-20'>
+            Your Wish List is Empty! please add product to wish list{' '}
+          </p>
+        ) : (
+          ''
+        )}
+        <div className='lg:p-8 p-1 mt-6'>
           {wishCtx.wishList.map((item) => (
             <div
               key={v4()}
               className='mb-4 relative border-[.2px] rounded-3xl border-[#EAF6F6]
-                 relative flex justify-between items-center p-4 h-[12rem] cursor-pointer'
+                 relative flex justify-between lg:justify-evenly items-center p-4 h-[12rem] cursor-pointer'
               onClick={() => {
                 navigate(`/single-product/${item.params}`);
               }}
             >
+              <button
+                className='text-red text-[1.1rem] absolute right-4  top-4'
+                onClick={() => {
+                  wishCtx.removeWishList(item);
+                }}
+              >
+                <Icons name={'Cross'} />
+              </button>
               <div className='w-[6rem] h-[8rem]'>
                 <img className='w-full h-full' src={item.img} alt='' />
               </div>

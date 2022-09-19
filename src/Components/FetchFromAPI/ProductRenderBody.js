@@ -5,6 +5,8 @@ import Button from '../../Utils/Button';
 import Ratings from '../../Utils/Ratings';
 import { useNavigate } from 'react-router-dom';
 import { WishContext } from '../../Store/context';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const ProductRenderBody = ({ product }) => {
   const navigate = useNavigate();
   const ctx = useContext(Context);
@@ -18,6 +20,7 @@ const ProductRenderBody = ({ product }) => {
       img: item.img,
       qntt: 1,
     });
+    toast('Added to Cart', { type: 'success' });
   };
   const addToWishLists = (item) => {
     wishCtx.addToWishList({
@@ -28,6 +31,7 @@ const ProductRenderBody = ({ product }) => {
       params: item.params,
     });
   };
+
   return (
     <div className='flex flex-wrap gap-6 gap-y-20 justify-evenly items-center'>
       {product.map((item) => (
@@ -58,6 +62,7 @@ const ProductRenderBody = ({ product }) => {
           </div>
         </Card>
       ))}
+      <ToastContainer />
     </div>
   );
 };

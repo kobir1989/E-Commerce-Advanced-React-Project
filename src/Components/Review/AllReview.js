@@ -8,7 +8,7 @@ const AllReview = () => {
         <h2 className='text-[1.2rem] font-medium'>Caustomar Reviews</h2>
       </div>
       {reviewData.map((review) => (
-        <div className='bg-white rounded-2xl p-6 mt-10'>
+        <div key={review.id} className='bg-white rounded-2xl p-6 mt-10'>
           <div className='flex items center justify-start gap-4'>
             <div className='w-[4rem] h-[4rem] mb-4'>
               <img
