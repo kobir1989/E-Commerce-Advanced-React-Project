@@ -1,7 +1,6 @@
 import React from 'react';
 import Icons from '../../Utils/Icons';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
 import NavCategory from './NavCategory';
 const NavManue = ({ onCategory, showCategory, showManue }) => {
   return (
