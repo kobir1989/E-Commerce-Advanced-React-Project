@@ -8,7 +8,7 @@ const ProductPopUp = () => {
   console.log(modalCtx);
   return (
     <Modal onClose={modalCtx.hideProductHandler}>
-      <div className='z-40 relative w-[40vw] h-[60vh]'>
+      <div className=' z-40 relative w-[40vw] h-[60vh]'>
         <button
           className='text-red text-[1.5rem] absolute right-6 top-6'
           onClick={modalCtx.hideProductHandler}
@@ -17,7 +17,7 @@ const ProductPopUp = () => {
         </button>
 
         <div
-          className='flex w-full h-full bg-white p-4 rounded shadow lg:flex-row
+          className='flex w-full h-full bg-white p-4 rounded lg:flex-row
           flex-col items-center justify-between'
         >
           <div className='lg:w-5/12 w-11/12'>

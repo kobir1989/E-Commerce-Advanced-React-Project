@@ -242,3 +242,17 @@ body {
   left: 0;
   filter: drop-shadow(6px 4px 3px rgba(0, 0, 0, 0.4));
 }
+
+@media screen and (min-width: 1020px) {
+  .curb_design::before {
+    content: '';
+    border-bottom: 2rem solid #b7c4cf;
+    border-left: 2rem solid #f5f5f5;
+    border-right: 2rem solid #b7c4cf;
+    border-top: 2rem solid #f5f5f5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: drop-shadow(8px 6px 3px rgba(0, 0, 0, 0.4));
+  }
+}

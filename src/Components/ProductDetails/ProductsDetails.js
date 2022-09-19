@@ -4,6 +4,7 @@ import RelatedProducts from '../RelatedProducts/RelatedProducts';
 import SingleProduct from './SingleProduct';
 import SectionWrapper from '../../Utils/SectionWrapper';
 import { useParams } from 'react-router-dom';
+import Review from '../Review/Review';
 const ProductsDetails = () => {
   const [product, setProduct] = useState({});
   const [isDisabled, setIsDisabled] = useState(true);
@@ -41,6 +42,7 @@ const ProductsDetails = () => {
         setIsDisabled={setIsDisabled}
       />
       <SectionWrapper>
+        <Review />
         <BroughtTogether />
         <RelatedProducts />
       </SectionWrapper>

@@ -27,8 +27,12 @@ const smIcons = [
 ];
 const InfoBanner = () => {
   return (
-    <section className='mt-20'>
-      <div className='px-8 bg-white 3xl:w-8/12 w-11/12 mx-auto lg:h-[8rem] h-[25rem] flex lg:flex-row justify-between flex-col lg:items-center items-start '>
+    <section className='mt-20 bg-white'>
+      <div
+        className='px-8  3xl:w-8/12 w-11/12 mx-auto
+       lg:h-[8rem] h-[25rem] flex lg:flex-row justify-between
+        flex-col lg:items-center items-start '
+      >
         {smIcons.map((item) => (
           <div className='flex my-4' key={item.id}>
             <div className='w-[4rem]'>

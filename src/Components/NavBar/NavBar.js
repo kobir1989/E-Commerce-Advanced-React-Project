@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import NavManue from './NavManue';
 import NavSearch from './NavSearch';
+<<<<<<< HEAD
 import StickyNav from './StickyNav';
 const NavBar = ({ onShowCart, onOpenWishList }) => {
+=======
+const NavBar = () => {
+>>>>>>> test
   const [showCategory, setShowCategory] = useState(true);
   const [showManue, setShowManue] = useState(true);
   const [showUserLogin, setShowUserLogin] = useState(true);
-
   const categoryHandler = () => {
     setShowCategory(!showCategory);
   };
@@ -16,7 +19,6 @@ const NavBar = ({ onShowCart, onOpenWishList }) => {
   const loginBtnHandler = () => {
     setShowUserLogin(!showUserLogin);
   };
-
   return (
     <nav className='bg-white lg:py-4 py-2'>
       <NavSearch
@@ -24,8 +26,6 @@ const NavBar = ({ onShowCart, onOpenWishList }) => {
         showManue={showManue}
         onLoginBtn={loginBtnHandler}
         showUserLogin={showUserLogin}
-        onShowCart={onShowCart}
-        onOpenWishList={onOpenWishList}
       />
       <NavManue
         onCategory={categoryHandler}

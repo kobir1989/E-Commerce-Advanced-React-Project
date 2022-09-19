@@ -39,7 +39,7 @@ const Cart = () => {
           <h3 className='text-[1.5rem]'>Your Cart</h3>
         </div>
         {ctx.items.length === 0 ? (
-          <p className='text-center text-red font-medium'>
+          <p className='text-center text-red font-medium text-[.9rem]'>
             Your Cart is Empty! Please Add items to Cart
           </p>
         ) : (

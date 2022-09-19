@@ -32,7 +32,7 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
           )
         }
       >
-        Fashion
+        Smart Watches
       </button>
       <button
         className={
@@ -47,7 +47,7 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
           )
         }
       >
-        Men
+        Furniture
       </button>
       <button
         className={
@@ -62,7 +62,7 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
           )
         }
       >
-        Women
+        Shoes
       </button>
       <button
         className={
@@ -79,20 +79,6 @@ const AllCategoryBtn = ({ selectedCategory, setSelectedCategory }) => {
       >
         Jewelery
       </button>
-      {/* <button
-        className={
-          selectedCategory === '/category/electronics'
-            ? 'bg-red text-white mb-4 mx-2 lg:mb-0 w-[12rem]  h-[2.5rem] font-medium '
-            : 'mb-4 mx-2 lg:mb-0 w-[12rem] border-[1px] border-red  h-[2.5rem] font-medium hover:bg-red hover:text-white'
-        }
-        onClick={() =>
-          setSelectedCategory(
-            'https://api.escuelajs.co/api/v1/categories/5/products'
-          )
-        }
-      >
-        Electronics
-      </button> */}
     </div>
   );
 };

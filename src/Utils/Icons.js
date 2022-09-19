@@ -28,6 +28,7 @@ import {
   AiOutlineEye,
   AiOutlinePlus,
 } from 'react-icons/ai';
+import { BiLoaderCircle } from 'react-icons/bi';
 import { MdOutlineShoppingBag } from 'react-icons/md';
 import { CgClose } from 'react-icons/cg';
 
@@ -91,6 +92,8 @@ const Icons = ({ name }) => {
       return <AiOutlinePlus />;
     case 'Ggl':
       return <FaGoogle />;
+    case 'Loader':
+      return <BiLoaderCircle />;
     default:
   }
 };

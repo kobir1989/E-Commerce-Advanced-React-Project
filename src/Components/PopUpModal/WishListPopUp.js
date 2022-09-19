@@ -2,13 +2,16 @@ import React from 'react';
 import { useContext } from 'react';
 import { WishContext } from '../../Store/context';
 import { ModalContext } from '../../Store/context';
-import { Link } from 'react-router-dom';
 import Modal from '../../Utils/Modal';
 import Icons from '../../Utils/Icons';
 import Button from '../../Utils/Button';
+import { useNavigate } from 'react-router-dom';
+import { v4 } from 'uuid';
 const WishListPopUp = () => {
+  const navigate = useNavigate();
   const wishCtx = useContext(WishContext);
   const modalCtx = useContext(ModalContext);
+
   return (
     <Modal onClose={modalCtx.hideWishListHandler}>
       <div className=' lg:w-[25vw] overflow-y-scroll w-[80vw] h-[80vh]'>
@@ -23,29 +26,43 @@ const WishListPopUp = () => {
             <Icons name={'Cross'} />
           </button>
         </div>
-        <div className='lg:p-8 p-1'>
+        {wishCtx.wishList.length === 0 ? (
+          <p className='text-red text-[.9rem] text-center mt-20'>
+            Your Wish List is Empty! please add product to wish list{' '}
+          </p>
+        ) : (
+          ''
+        )}
+        <div className='lg:p-8 p-1 mt-6'>
           {wishCtx.wishList.map((item) => (
-            <Link to=''>
-              <div
-                key={item.id}
-                className='mb-4 relative border-[.2px] rounded-3xl border-[#EAF6F6]
-                 relative flex justify-between items-center p-4 h-[12rem]'
+            <div
+              key={v4()}
+              className='mb-4 relative border-[.2px] rounded-3xl border-[#EAF6F6]
+                 relative flex justify-between lg:justify-evenly items-center p-4 h-[12rem] cursor-pointer'
+              onClick={() => {
+                navigate(`/single-product/${item.params}`);
+              }}
+            >
+              <button
+                className='text-red text-[1.1rem] absolute right-4  top-4'
+                onClick={() => {
+                  wishCtx.removeWishList(item);
+                }}
               >
-                <div className='w-[6rem] h-[8rem]'>
-                  <img className='w-full h-full' src={item.img} alt='' />
-                </div>
-                <div>
-                  <h2 className='text-[1.2rem] text-gray'>{item.title}</h2>
-                  <h2 className='text-red text-[1.5rem]'>${item.price}</h2>
-                  <p className='text-gray text-[.9rem]'>
-                    available in the stock
-                  </p>
-                </div>
-                <div className='absolute right-0 bottom-0'>
-                  <Button />
-                </div>
+                <Icons name={'Cross'} />
+              </button>
+              <div className='w-[6rem] h-[8rem]'>
+                <img className='w-full h-full' src={item.img} alt='' />
               </div>
-            </Link>
+              <div>
+                <h2 className='text-[1.2rem] text-gray'>{item.title}</h2>
+                <h2 className='text-red text-[1.5rem]'>${item.price}</h2>
+                <p className='text-gray text-[.9rem]'>available in the stock</p>
+              </div>
+              <div className='absolute right-0 bottom-0'>
+                <Button />
+              </div>
+            </div>
           ))}
         </div>
       </div>
